@@ -1,0 +1,170 @@
+{
+  "rubric_description": {
+    "dimensions": {
+      "completeness": "Are all relevant test scope dimensions covered?",
+      "specificity": "Are test descriptions concrete and actionable?",
+      "risk_calibration": "Is the coverage depth (LOW/MEDIUM/HIGH) appropriate? R=5 correct+good justification, R=4 correct+weak justification, R=3 one level off, R=1-2 two levels off",
+      "integration_awareness": "Does the recommendation identify relevant cross-system touchpoints?",
+      "clarification_flag_quality": "Are flagged gaps genuinely useful and materially relevant?"
+    },
+    "type": "BASELINE — naive prompt, no ATSR framework",
+    "max_per_spec": 25,
+    "max_total": 450
+  },
+  "scores": [
+    {
+      "spec_id": "SPEC-01",
+      "gt_depth": "MEDIUM", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 3, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 15,
+      "notes": "Main test areas covered but regression thin. Functional tests OK, but smoke/regression descriptions generic. Coverage HIGH vs MEDIUM — one level off. Integration identifies POS-to-portal sync but descriptions generic. Flags not specific or actionable."
+    },
+    {
+      "spec_id": "SPEC-02",
+      "gt_depth": "LOW", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 3, "risk_calibration": 1, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 13,
+      "notes": "Reconnection scenario covered and matrix partially named, but HIGH vs LOW is two levels off — a vendor firmware patch fix is clearly LOW depth. Integration generic. Flags irrelevant (security checks not applicable to a reconnection fix)."
+    },
+    {
+      "spec_id": "SPEC-03",
+      "gt_depth": "MEDIUM", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 3, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 15,
+      "notes": "4 network types covered, regression on POS communication present but thin. Test descriptions mostly generic connectivity checks. HIGH vs MEDIUM — one level off. Integration and flags generic."
+    },
+    {
+      "spec_id": "SPEC-04",
+      "gt_depth": "HIGH", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 3, "risk_calibration": 5, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 17,
+      "notes": "Main areas covered but doesn't enumerate the 9 specific report types. Regression very generic ('ensure existing POS functionalities are unaffected'). Depth correct. Integration identifies BI platform but not specific. Loyalty flag is actually out of scope per spec."
+    },
+    {
+      "spec_id": "SPEC-05",
+      "gt_depth": "HIGH", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 4, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 16,
+      "notes": "Names 2x medium pricing, modifier count of 6, 3 beverage categories — good specificity. But MEDIUM vs HIGH is one level off for a new size tier addition with new pricing logic. Integration generic. Flags generic."
+    },
+    {
+      "spec_id": "SPEC-06",
+      "gt_depth": "MEDIUM", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 4, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 17,
+      "notes": "Covers date/time separation and edge cases, names specific config fields. HIGH vs MEDIUM — one level off for an enhancement. Integration generic. Flags relevant (end date before start date is a valid edge case)."
+    },
+    {
+      "spec_id": "SPEC-08",
+      "gt_depth": "MEDIUM", "baseline_depth": "HIGH",
+      "completeness": 5, "specificity": 4, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 17,
+      "notes": "Lists roles for both brands and covers legitimate operations — strong completeness. Depth HIGH vs MEDIUM — one level off for an access control config change. Integration generic. First flag irrelevant (no regional exceptions mentioned); second flag about food item replication is in the spec."
+    },
+    {
+      "spec_id": "SPEC-09",
+      "gt_depth": "LOW", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 3, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 5,
+      "total": 18,
+      "notes": "Covers main areas but misses multi-environment progression (UAT/Pre-Prod/Prod). MEDIUM vs LOW — one level off for a config value change. Flags are excellent: retroactivity and third-party coordination both match the key open questions in the ground truth."
+    },
+    {
+      "spec_id": "SPEC-10",
+      "gt_depth": "LOW", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 3, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 16,
+      "notes": "Main areas covered but misses multi-environment progression. MEDIUM vs LOW — one level off for cert rotation. Test descriptions somewhat generic. Vendor confirmation flag is relevant."
+    },
+    {
+      "spec_id": "SPEC-11",
+      "gt_depth": "HIGH", "baseline_depth": "HIGH",
+      "completeness": 4, "specificity": 3, "risk_calibration": 5, "integration_awareness": 4, "clarification_flag_quality": 2,
+      "total": 18,
+      "notes": "Core scenarios covered but regression thin. Depth correct. Mobile app to POS and pricing engine integration specifically identified. Flags generic."
+    },
+    {
+      "spec_id": "SPEC-12",
+      "gt_depth": "MEDIUM", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 4, "risk_calibration": 5, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 18,
+      "notes": "Names specific sections (Tender Media, Group Sales, Discounts, Service Charges). Depth correct. Integration tests generic ('data source' and 'export formats'). Flags not specific."
+    },
+    {
+      "spec_id": "SPEC-13",
+      "gt_depth": "MEDIUM", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 4, "risk_calibration": 5, "integration_awareness": 3, "clarification_flag_quality": 2,
+      "total": 18,
+      "notes": "Zone assignment and page design covered, explicitly excludes limited-menu designs. Depth correct. Integration generic. Flags not specific."
+    },
+    {
+      "spec_id": "SPEC-14",
+      "gt_depth": "HIGH", "baseline_depth": "MEDIUM",
+      "completeness": 5, "specificity": 4, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 5,
+      "total": 20,
+      "notes": "Strong: covers all 4 device/OS combinations explicitly. MEDIUM vs HIGH — one level off for a platform version upgrade. Pending release notes flag is excellent and critical. Integration generic ('backend services')."
+    },
+    {
+      "spec_id": "SPEC-15",
+      "gt_depth": "LOW", "baseline_depth": "MEDIUM",
+      "completeness": 3, "specificity": 5, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 17,
+      "notes": "Names 'CANCEL TRANSACTION' message text verbatim — excellent specificity. But completeness thin: regression is shallow, integration not explored. MEDIUM vs LOW — one level off for a UI bug fix. Flags partially relevant."
+    },
+    {
+      "spec_id": "SPEC-16",
+      "gt_depth": "MEDIUM", "baseline_depth": "HIGH",
+      "completeness": 3, "specificity": 3, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 15,
+      "notes": "Same core failure as ATSR: does not identify BIN range boundary/conflict testing as the primary objective. Regression tests generic. HIGH vs MEDIUM — one level off. Flags moderately relevant."
+    },
+    {
+      "spec_id": "SPEC-17",
+      "gt_depth": "MEDIUM", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 4, "risk_calibration": 5, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 19,
+      "notes": "Names Windows Defender, remote tunneling tool, core POS operations. Depth correct. Integration mentions different Windows Defender versions but generic. Flags relevant but not highly actionable."
+    },
+    {
+      "spec_id": "SPEC-18",
+      "gt_depth": "HIGH", "baseline_depth": "MEDIUM",
+      "completeness": 4, "specificity": 4, "risk_calibration": 3, "integration_awareness": 3, "clarification_flag_quality": 3,
+      "total": 17,
+      "notes": "Covers creation, display, regression, some edge cases. MEDIUM vs HIGH — one level off for a new feature. Integration identifies clock-in trigger but generic. Flags relevant (character count, priority) but miss the architectural unknowns that ATSR surfaced."
+    },
+    {
+      "spec_id": "SPEC-19",
+      "gt_depth": "HIGH", "baseline_depth": "HIGH",
+      "completeness": 5, "specificity": 2, "risk_calibration": 5, "integration_awareness": 4, "clarification_flag_quality": 4,
+      "total": 20,
+      "notes": "Comprehensive list of all system areas from the spec. Depth correct. But specificity is poor — all 14 functional tests follow 'Verify DNS resolution for X' pattern with no scenario detail. Integration and flags are solid."
+    }
+  ],
+  "dimension_totals": {
+    "completeness": 73,
+    "specificity": 63,
+    "risk_calibration": 63,
+    "integration_awareness": 56,
+    "clarification_flag_quality": 50
+  },
+  "dimension_averages": {
+    "completeness": 4.06,
+    "specificity": 3.50,
+    "risk_calibration": 3.50,
+    "integration_awareness": 3.11,
+    "clarification_flag_quality": 2.78
+  },
+  "grand_total": 305,
+  "max_possible": 450,
+  "overall_percentage": 67.8,
+  "score_range": {
+    "highest": {"spec_id": "SPEC-14 / SPEC-19", "score": 20},
+    "lowest": {"spec_id": "SPEC-02", "score": 13}
+  },
+  "depth_calibration_accuracy": {
+    "correct": ["SPEC-04", "SPEC-11", "SPEC-12", "SPEC-13", "SPEC-17", "SPEC-19"],
+    "correct_count": 6,
+    "total": 18,
+    "percentage": 33.3,
+    "note": "Baseline over-assigns HIGH — 9 of 18 specs assigned HIGH vs 6 in ground truth. Without calibration rules, the model defaults to treating most enterprise changes as high-risk."
+  }
+}

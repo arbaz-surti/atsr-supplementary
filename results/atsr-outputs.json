@@ -1,0 +1,889 @@
+{
+  "run_metadata": {
+    "model": "openai/gpt-4o",
+    "timestamp": "2026-03-20T11:09:51.600770Z",
+    "spec_count": 18,
+    "framework": "ATSR v1.0",
+    "note": "18 unique specs (ticket 11 in source PDF was duplicate of ticket 8, excluded)"
+  },
+  "results": [
+    {
+      "spec_id": "SPEC-01",
+      "title": "Online Ordering Portal Still Shows Menu Item as Available After Overnight Menu Sync",
+      "change_type": "Bug fix / Integration patch",
+      "system_area": "POS to online ordering platform integration (menu sync)",
+      "ground_truth_scope": "Functional tests on POS status change behavior; integration tests on POS-to-portal sync; smoke test on online ordering checkout flow; regression on other menu item availability states.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-01",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:02:50.862708Z",
+        "functional_tests": [
+          "Verify that marking an item as Out of Stock on the POS immediately updates its status on the POS.",
+          "Check that an item marked as Out of Stock on the POS is not orderable on the online web ordering app after the sync.",
+          "Check that an item marked as Out of Stock on the POS is not orderable on the mobile ordering app after the sync.",
+          "Verify that removing the Out of Stock flag on the POS makes the item visible and orderable on the online web ordering app.",
+          "Verify that removing the Out of Stock flag on the POS makes the item visible and orderable on the mobile ordering app."
+        ],
+        "smoke_tests": [
+          "Verify that other menu items not marked as Out of Stock remain orderable on the online ordering platform.",
+          "Check that the online ordering platform is accessible and functional after the sync process."
+        ],
+        "regression_tests": [
+          "Test that the menu sync process does not affect the pricing of items on the online ordering platform.",
+          "Verify that the sync process does not alter item descriptions on the online ordering platform.",
+          "Ensure that the sync process does not affect the availability of items that are in stock."
+        ],
+        "integration_tests": [
+          "Validate the end-to-end data flow from the POS to the online ordering platform for an item marked as Out of Stock.",
+          "Test the data flow when the Out of Stock status is removed, ensuring the item becomes available again on the online platform."
+        ],
+        "exploratory_tests": [
+          "Test the behavior when multiple items are marked as Out of Stock simultaneously and verify their status on the online platform.",
+          "Check the system's behavior if the sync interval is manually triggered multiple times in quick succession."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change is a bug fix in a critical integration area affecting customer experience, requiring thorough validation of the sync process and its impact on item availability."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 15,
+          "notes": "The estimate includes tests for both web and mobile platforms, covering functional, smoke, regression, and integration scenarios. The complexity of the sync process and its impact on customer-facing systems drive the test case count."
+        },
+        "clarification_flags": [
+          "Clarify the exact sync interval and whether it can be manually triggered for testing purposes.",
+          "Confirm if there are any known limitations or conditions under which the sync might fail or be delayed.",
+          "Verify if there are any differences in behavior between the web and mobile ordering platforms that need specific attention."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-02",
+      "title": "Payment Device Firmware Update \u2014 Quick Chip Reconnection Fix",
+      "change_type": "Patch (vendor-delivered firmware fix)",
+      "system_area": "Payment processing / POS to payment terminal integration",
+      "ground_truth_scope": "Functional tests on payment reconnection flow; matrix testing across 6 device/version combinations; smoke test on standard transaction flow post-fix.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-02",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:03.053176Z",
+        "functional_tests": [
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v18 with terminal model A.",
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v18 with terminal model B.",
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v18 with terminal model C.",
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v19 with terminal model A.",
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v19 with terminal model B.",
+          "Verify that a transaction can be completed successfully after the network cable is reconnected for POS v19 with terminal model C."
+        ],
+        "smoke_tests": [
+          "Perform a basic transaction without network interruption to ensure general transaction processing is unaffected for POS v18 and terminal model A.",
+          "Perform a basic transaction without network interruption to ensure general transaction processing is unaffected for POS v19 and terminal model B."
+        ],
+        "regression_tests": [
+          "Test a complete transaction flow without any network interruption for all POS and terminal combinations to ensure no regression in standard transaction processing.",
+          "Verify that the system logs appropriate error messages when the network cable is unplugged mid-transaction."
+        ],
+        "integration_tests": [
+          "Validate end-to-end transaction processing from POS to payment terminal to backend systems for each POS and terminal combination after reconnection."
+        ],
+        "exploratory_tests": [
+          "Test the behavior when the network cable is unplugged and reconnected multiple times during a transaction.",
+          "Test the behavior when the network cable is unplugged for an extended period before being reconnected."
+        ],
+        "coverage_depth": {
+          "level": "LOW",
+          "justification": "The change is a vendor-delivered patch fix specifically targeting a reconnection issue, requiring focused testing on the reconnection scenario."
+        },
+        "effort_estimate": {
+          "min_test_cases": 12,
+          "max_test_cases": 18,
+          "notes": "The estimate includes functional tests for each device/POS combination, smoke tests for basic functionality, and exploratory tests for edge cases."
+        },
+        "clarification_flags": [
+          "Confirm if there are any additional configurations or settings that need to be adjusted on the POS or terminal devices before testing the new firmware.",
+          "Clarify if there are any specific logging or monitoring requirements during the testing process to capture the reconnection behavior."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-03",
+      "title": "New Wi-Fi Access Point Hardware Rollout \u2014 Indoor Wi-Fi 7 Model",
+      "change_type": "Infrastructure / hardware replacement",
+      "system_area": "Network infrastructure (store connectivity, line-busting, POS communication)",
+      "ground_truth_scope": "Connectivity functional tests across all 4 network types; device-specific testing on line-busting tablet; regression on POS communication over new AP; smoke test on guest network access.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-03",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:13.214025Z",
+        "functional_tests": [
+          "Verify connectivity of management devices on the staff/management network using the new Wi-Fi 7 access point.",
+          "Test connectivity and performance of brand-approved devices on the brand-approved device network.",
+          "Ensure line-busting tablets connect and function correctly on the POS/line-busting network.",
+          "Check guest network connectivity and performance with a variety of devices."
+        ],
+        "smoke_tests": [
+          "Quick connectivity check on all networks immediately after Wi-Fi 7 access point installation.",
+          "Verify basic internet access from each network type."
+        ],
+        "regression_tests": [
+          "Test POS system transactions over the POS/line-busting network to ensure no disruptions.",
+          "Verify that existing network security policies are enforced on the new Wi-Fi 7 access points.",
+          "Check for any degradation in network performance compared to the previous Wi-Fi 6 models."
+        ],
+        "integration_tests": [
+          "Validate end-to-end data flow from line-busting tablets to the POS system over the new Wi-Fi 7 network.",
+          "Test integration of management devices with network monitoring tools over the new access points."
+        ],
+        "exploratory_tests": [
+          "Test network handoff between Wi-Fi 6 and Wi-Fi 7 access points for devices in motion.",
+          "Probe for any latency issues when multiple devices connect simultaneously to the new access points.",
+          "Check for unexpected device disconnections or reconnections during peak usage times."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change involves hardware replacement which can affect network connectivity and performance, but does not introduce new software features or integrations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 15,
+          "max_test_cases": 25,
+          "notes": "The estimate accounts for testing across multiple network types and devices, with additional exploratory testing to uncover potential edge cases."
+        },
+        "clarification_flags": [
+          "Clarify if there are any specific performance benchmarks that need to be met with the new Wi-Fi 7 access points.",
+          "Confirm if there are any specific security configurations or policies that need to be validated on the new hardware.",
+          "Determine if there are any specific devices or models that require focused testing due to known compatibility issues."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-04",
+      "title": "New Catering Voucher Tender Key Implementation on POS",
+      "change_type": "New feature (new payment tender type)",
+      "system_area": "Payment processing, POS, financial reporting, analytics, third-party data pipeline",
+      "ground_truth_scope": "Full functional testing of tender flow; regression across all existing payment tender types; integration tests on financial reporting (3 report types); analytics report validation (6 report types); third-party data pipeline validation; exploratory testing on edge cases (partial tender, combined tenders, refunds).",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-04",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:24.558557Z",
+        "functional_tests": [
+          "Verify that the new catering voucher tender key is available on the POS interface.",
+          "Test the transaction flow using the catering voucher tender key for a single item purchase.",
+          "Test the transaction flow using the catering voucher tender key for a multi-item purchase.",
+          "Ensure the catering voucher tender key processes the payment correctly and updates the transaction total.",
+          "Validate that the catering voucher tender key behaves like a voucher payment in the transaction logs."
+        ],
+        "smoke_tests": [
+          "Check that other tender keys on the POS are still functioning correctly after the new key implementation.",
+          "Verify that the POS system initializes correctly with the new tender key available."
+        ],
+        "regression_tests": [
+          "Test existing POS tender types to ensure no disruption in their functionality.",
+          "Verify that existing in-store catering order types are unaffected by the new tender key.",
+          "Check that POS reporting in Property Financial, Employee Financial, and Revenue Center Financial reports remains accurate.",
+          "Ensure analytics reports for system sales, tender media, POS category, tax, and 24h sales summary are unaffected."
+        ],
+        "integration_tests": [
+          "Validate end-to-end data flow from POS to the business intelligence platform for transactions using the catering voucher tender key.",
+          "Ensure third-party reporting of sales includes transactions processed with the new tender key."
+        ],
+        "exploratory_tests": [
+          "Test the behavior of the catering voucher tender key when used in conjunction with discounts or promotions.",
+          "Probe the system's response to partial payments using the catering voucher tender key.",
+          "Investigate the handling of voided transactions involving the catering voucher tender key."
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "This is a new feature affecting multiple critical areas such as payment processing, reporting, and third-party data flows, requiring comprehensive testing."
+        },
+        "effort_estimate": {
+          "min_test_cases": 15,
+          "max_test_cases": 25,
+          "notes": "The estimate considers the need for detailed functional testing of the new tender key, regression testing across existing functionalities, and integration validation."
+        },
+        "clarification_flags": [
+          "Clarify the expected behavior of the catering voucher tender key in scenarios involving refunds or exchanges.",
+          "Confirm if there are any specific analytics or reporting metrics that need to be validated for the new tender key.",
+          "Determine if there are any specific third-party systems that require validation beyond the business intelligence platform."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-05",
+      "title": "New Extra-Large Beverage Size Addition to Menu",
+      "change_type": "New feature (menu item / size tier addition)",
+      "system_area": "Menu configuration, POS ordering, pricing engine",
+      "ground_truth_scope": "Functional tests on ordering each new size across all 3 beverage categories; pricing validation (threshold pricing, 2x medium calculation, modifier pricing); hero build validation for seasonal variants; regression on existing size tiers and pricing; smoke test on POS order flow.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-05",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:37.693431Z",
+        "functional_tests": [
+          "Verify that the extra-large size option is available for iced coffee, iced latte, and refreshers in the POS menu.",
+          "Check that the extra-large size is priced at 2x the medium beverage price for each applicable item.",
+          "Ensure that the default modifier count is set to 6 for the extra-large size.",
+          "Validate that all existing modifications are available for the extra-large size.",
+          "Confirm that seasonal hero build variants are correctly added and displayed for specific items."
+        ],
+        "smoke_tests": [
+          "Verify that the POS system is operational and can process orders with the new extra-large size.",
+          "Check that the menu displays correctly on customer-facing screens with the new size tier."
+        ],
+        "regression_tests": [
+          "Test existing size options (small, medium, large) to ensure they are unaffected by the new size addition.",
+          "Verify that the pricing engine correctly calculates prices for all existing sizes and modifications.",
+          "Ensure that the order processing flow remains intact for all beverage sizes."
+        ],
+        "integration_tests": [
+          "Validate that the pricing engine correctly integrates with the POS system to apply the new pricing tier.",
+          "Check that the menu configuration updates are correctly reflected in any integrated mobile ordering apps."
+        ],
+        "exploratory_tests": [
+          "Test edge cases where multiple modifiers are added to the extra-large size to ensure pricing is accurate.",
+          "Probe scenarios where the extra-large size is combined with seasonal promotions or discounts."
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "The change involves a new feature addition affecting multiple system areas including menu configuration, POS ordering, and pricing, which are critical to business operations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 15,
+          "max_test_cases": 25,
+          "notes": "The estimate accounts for detailed functional testing across multiple beverage types, regression testing of existing sizes, and integration checks with pricing and mobile apps."
+        },
+        "clarification_flags": [
+          "Clarify if there are any specific seasonal hero build variants that need additional testing.",
+          "Confirm if there are any specific promotions or discounts that should be tested with the new size.",
+          "Verify if there are any regional variations in pricing or availability for the extra-large size."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-06",
+      "title": "Menu Item Availability App \u2014 Time Window Configuration Enhancement",
+      "change_type": "Enhancement (software behavior change in version update)",
+      "system_area": "POS extension app / menu item scheduling",
+      "ground_truth_scope": "Functional tests on daily recurrence behavior; date boundary tests; backward compatibility test; regression on menu item availability behavior in both platform versions.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-06",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:48.707773Z",
+        "functional_tests": [
+          "Verify that the new configuration allows setting separate start and end dates from start and end times.",
+          "Test that the app correctly schedules menu item availability to start and end at the specified times each day within the date range.",
+          "Check that the app behaves correctly when the start date is the same as the end date.",
+          "Ensure that the app handles invalid configurations gracefully, such as end time before start time."
+        ],
+        "smoke_tests": [
+          "Verify basic POS functionality is unaffected when the extension app is enabled.",
+          "Check that menu items are visible and selectable in the POS during configured availability times."
+        ],
+        "regression_tests": [
+          "Test the original single datetime range configuration to ensure backward compatibility.",
+          "Verify that menu item availability scheduling works correctly in both POS platform versions 18.x and 19.x."
+        ],
+        "integration_tests": [
+          "Validate that the scheduling changes are correctly reflected in the POS system's reporting module.",
+          "Ensure that the data flow between the extension app and the POS system is consistent and accurate across different store locations."
+        ],
+        "exploratory_tests": [
+          "Test the behavior of the app when the system date/time is changed during an active scheduling window.",
+          "Probe how the app handles daylight saving time changes within the scheduling window."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change is an enhancement to existing functionality, affecting scheduling logic but not introducing entirely new features or integrations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 12,
+          "max_test_cases": 18,
+          "notes": "The estimate accounts for testing across two POS versions and includes functional, regression, and integration tests. Time-sensitive testing in older versions may require additional coordination."
+        },
+        "clarification_flags": [
+          "Clarify if there are any specific non-traditional store locations that must be prioritized for testing.",
+          "Confirm if there are any known limitations or constraints in the older POS version that could affect testing."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-08",
+      "title": "Role-Based Access Control \u2014 Restrict Void on Empty Check for Fraud Prevention",
+      "change_type": "Security / access control configuration change",
+      "system_area": "POS role configuration, transaction management",
+      "ground_truth_scope": "Functional tests for each affected role attempting void on empty check (should be blocked); regression tests on legitimate void/return/closed check operations for all manager-level roles; smoke test on crew-level roles (authorization flow unchanged).",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-08",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:03:57.940139Z",
+        "functional_tests": [
+          "Verify that roles in Brand A (Shift Lead standard, Shift Lead plus, Assistant Manager, Manager, Multi-Unit, Field Engineer) cannot void an empty check.",
+          "Verify that roles in Brand B (Franchisee, Manager, Shift Leader) cannot void an empty check.",
+          "Confirm that roles in Brand A (Crew, Crew Plus) and Brand B (Crew Member, Senior Crew Member) still require authorization to void an empty check."
+        ],
+        "smoke_tests": [
+          "Check that voiding individual items is still possible for all roles.",
+          "Ensure transaction returns can be processed normally for all roles.",
+          "Verify that opening closed checks is unaffected for all roles."
+        ],
+        "regression_tests": [
+          "Test the standard transaction return process for all roles to ensure no disruption.",
+          "Verify that existing access control settings for roles not mentioned remain unchanged."
+        ],
+        "integration_tests": [
+          "Validate end-to-end transaction flow from order initiation to void attempt and ensure proper logging and alerts for unauthorized void attempts.",
+          "Check integration with the reporting system to ensure void attempts are logged correctly for audit purposes."
+        ],
+        "exploratory_tests": [
+          "Attempt to void an empty check using a food item order and verify the restriction is enforced.",
+          "Test voiding an empty check with a beverage order to confirm the restriction is not applicable."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change affects access control settings, which are critical for security but do not introduce new features or integrations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 15,
+          "notes": "The estimate includes tests for each role affected, both for blocking voids and ensuring legitimate operations are unaffected."
+        },
+        "clarification_flags": [
+          "Confirm if there are any additional roles or exceptions not listed in the specification.",
+          "Clarify if there are specific logging or alerting requirements when a void attempt is blocked."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-09",
+      "title": "Delivery Markup Percentage Update for Third-Party Delivery Platform",
+      "change_type": "Configuration change (percentage value update)",
+      "system_area": "Reporting/analytics configuration, third-party delivery platform, data pipeline",
+      "ground_truth_scope": "Functional test of delivery markup value in reporting tool across 3 environments; validation of markup in sales reports for affected platform; verification that other delivery platforms are unaffected; coordination check with third-party reporting platform; retroactivity determination.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-09",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:04:06.353628Z",
+        "functional_tests": [
+          "Verify that the delivery markup percentage is updated to 26% in the reporting and analytics configuration tool under Data Mapping settings.",
+          "Check that the updated markup percentage is applied to new transactions for the specified third-party delivery platform.",
+          "Validate that the change is correctly reflected in reports generated after the effective date."
+        ],
+        "smoke_tests": [
+          "Ensure that other delivery platforms' markup percentages remain unchanged.",
+          "Quickly verify that the reporting and analytics tool is operational after the configuration change."
+        ],
+        "regression_tests": [
+          "Test existing reports to ensure they still generate correctly with the new markup percentage.",
+          "Verify that historical data for the affected delivery platform remains unchanged unless specified otherwise."
+        ],
+        "integration_tests": [
+          "Validate the data flow from the reporting and analytics tool to the third-party delivery platform to ensure the new markup is applied correctly.",
+          "Check if the third-party reporting platform reflects the updated markup percentage, if applicable."
+        ],
+        "exploratory_tests": [
+          "Investigate how the system handles transactions that span the effective date of the markup change.",
+          "Probe for any discrepancies in the markup application for edge cases, such as refunds or partial deliveries."
+        ],
+        "coverage_depth": {
+          "level": "LOW",
+          "justification": "The change is a configuration update with a limited scope affecting a specific percentage value."
+        },
+        "effort_estimate": {
+          "min_test_cases": 8,
+          "max_test_cases": 12,
+          "notes": "The estimate is based on the need to verify the configuration change across different environments and ensure no unintended side effects."
+        },
+        "clarification_flags": [
+          "Confirm whether the markup change applies retroactively to prior transactions or only to new transactions.",
+          "Clarify if any changes are required on the third-party reporting platform and if coordination is needed."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-10",
+      "title": "SSL Certificate Renewal for Loyalty Platform Integration",
+      "change_type": "Infrastructure / security (certificate rotation)",
+      "system_area": "POS terminals, tablets, loyalty platform integration, content management configuration",
+      "ground_truth_scope": "Functional test of certificate import process on POS terminals and tablets; connectivity validation to loyalty platform after cert rotation; smoke test on loyalty transactions end-to-end; UAT validation before Pre-Prod and Prod deployment.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-10",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-19T23:04:15.457353Z",
+        "functional_tests": [
+          "Verify that the new SSL certificates are correctly imported on POS terminals.",
+          "Check that tablets correctly import and reference the new SSL certificates.",
+          "Ensure that the POS platform references the new certificates based on content management page settings."
+        ],
+        "smoke_tests": [
+          "Confirm that POS terminals can still process transactions after certificate update.",
+          "Verify basic connectivity between POS terminals and the loyalty platform post-certificate update."
+        ],
+        "regression_tests": [
+          "Test existing loyalty program transactions to ensure they are unaffected by the certificate change.",
+          "Verify that content management settings for SSL certificates are still correctly applied."
+        ],
+        "integration_tests": [
+          "Validate end-to-end data flow between POS terminals and the loyalty platform using the new certificates.",
+          "Confirm that the external loyalty platform vendor has correctly installed the new certificates on their servers."
+        ],
+        "exploratory_tests": [
+          "Test the behavior of the system if the certificate import fails on a POS terminal.",
+          "Check system behavior when an expired certificate is accidentally used."
+        ],
+        "coverage_depth": {
+          "level": "LOW",
+          "justification": "The change is a routine SSL certificate rotation, which is a low-risk infrastructure update."
+        },
+        "effort_estimate": {
+          "min_test_cases": 8,
+          "max_test_cases": 12,
+          "notes": "The estimate is based on the need to verify certificate import, basic connectivity, and integration with the loyalty platform. The low-risk nature of the change suggests fewer test cases are needed."
+        },
+        "clarification_flags": [
+          "Confirm if there are any specific brand configurations that might affect the certificate import process.",
+          "Clarify if there are any fallback procedures if the new certificates fail to import or validate."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-11",
+      "title": "Mobile App Advance Order \u2014 Price Lock Behavior When Item Prices Change Before Fulfillment",
+      "change_type": "Exploratory / edge case validation",
+      "system_area": "Mobile ordering app, pricing engine, POS order processing",
+      "ground_truth_scope": "Functional test of price lock behavior on advance orders; exploratory test of price change applied before order fulfillment; integration test of mobile app to POS order handoff; edge case testing with single and multiple price changes; regression on standard same-day mobile order flow.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-11",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:07:15.428060Z",
+        "functional_tests": [
+          "Verify that an advance order can be placed successfully with a future pickup time.",
+          "Ensure that the price at the time of ordering is correctly stored and displayed in the order summary.",
+          "Check that the order details, including prices, are correctly transmitted to the POS system."
+        ],
+        "smoke_tests": [
+          "Confirm that the mobile app can connect to the pricing engine and POS system without errors.",
+          "Verify that the mobile app can retrieve and display current item prices correctly."
+        ],
+        "regression_tests": [
+          "Test that existing order placement and processing workflows are unaffected by the price lock feature.",
+          "Ensure that price changes in the system do not affect immediate orders placed at the current price."
+        ],
+        "integration_tests": [
+          "Validate end-to-end data flow from the mobile app to the POS system, ensuring the locked price is maintained.",
+          "Test the interaction between the mobile app and the pricing engine when prices are updated after order placement."
+        ],
+        "exploratory_tests": [
+          "Simulate a scenario where multiple items in an order have their prices changed before fulfillment and verify the locked price behavior.",
+          "Test edge cases where the price change occurs very close to the fulfillment time.",
+          "Explore scenarios where the order is modified after the price change but before fulfillment."
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "The change involves a critical feature affecting pricing and order processing, with potential business impact if not functioning as expected."
+        },
+        "effort_estimate": {
+          "min_test_cases": 15,
+          "max_test_cases": 25,
+          "notes": "The high number of test cases is due to the need for thorough validation of pricing behavior across multiple systems and scenarios."
+        },
+        "clarification_flags": [
+          "Clarify if there are any specific conditions or exceptions where the price lock should not apply.",
+          "Confirm if there are any logging or monitoring requirements for tracking price discrepancies."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-12",
+      "title": "Financial Report Layout Change \u2014 Move Third-Party Delivery Detail Section to Bottom",
+      "change_type": "Enhancement (report layout / section reordering)",
+      "system_area": "Financial reporting (property-level report)",
+      "ground_truth_scope": "Functional test of new section order in the report; validation that third-party delivery detail data is correct at the new location; regression that Order Type section summary values are unchanged; regression on Tender Media, Group Sales, Discounts, and Service Charges sections; smoke test on report generation.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-12",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:07:24.541717Z",
+        "functional_tests": [
+          "Verify that the Third-Party Delivery Partner detailed sales data section is relocated to the bottom of the Property Financial Report, below the Rewards section.",
+          "Ensure that the Tender Media, Group Sales, Discounts, and Service Charges sections are now positioned above the Third-Party Delivery Partner detailed sales data section.",
+          "Check that the summary-level delivery sales in the Order Type section remain unchanged and display correctly."
+        ],
+        "smoke_tests": [
+          "Generate a Property Financial Report and confirm that all sections are present and no data is missing.",
+          "Verify that the report generates without errors after the layout change."
+        ],
+        "regression_tests": [
+          "Ensure that the layout change does not affect the accuracy of the data in the Third-Party Delivery Partner detailed sales data section.",
+          "Verify that the data in the Tender Media, Group Sales, Discounts, and Service Charges sections remain accurate and unaffected by the layout change.",
+          "Check that the overall report generation process remains stable and performs as expected."
+        ],
+        "integration_tests": [
+          "Validate that data from the Third-Party Delivery Partner system is correctly integrated and displayed in the new report layout.",
+          "Ensure that any data feeds into the financial reporting system are not disrupted by the layout change."
+        ],
+        "exploratory_tests": [
+          "Test with various data volumes to ensure the report layout handles large and small datasets without layout issues.",
+          "Check for any unexpected truncation or overflow of data in the relocated section."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change is an enhancement involving report layout reordering, which affects the presentation but not the underlying data processing."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 15,
+          "notes": "The effort is focused on verifying the correct reordering of sections and ensuring no data integrity issues arise from the layout change."
+        },
+        "clarification_flags": [
+          "Confirm if there are any specific formatting requirements for the relocated section.",
+          "Clarify if there are any dependencies on external systems that might affect the report layout."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-13",
+      "title": "POS Hierarchy Zone Addition for Full-Menu Non-Traditional Store Locations",
+      "change_type": "Configuration change (new zone addition to hierarchy)",
+      "system_area": "POS configuration, hierarchy and zone management, menu and page design",
+      "ground_truth_scope": "Functional test of zone configuration pull-down on a property assigned to the new zone; page design verification (correct full-menu design, not limited-menu design); regression on existing zones to confirm no unintended inheritance changes; smoke test on POS boot-up and menu display at a test property.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-13",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:07:33.326170Z",
+        "functional_tests": [
+          "Verify that properties assigned to the new zone pull down the standard brand POS configuration.",
+          "Check that the full-menu page design is applied to properties in the new zone.",
+          "Ensure that the limited-menu bakery and beverage-only page designs are not applied to the new zone."
+        ],
+        "smoke_tests": [
+          "Confirm that the POS system initializes correctly with the new zone configuration.",
+          "Verify basic transaction processing in a store assigned to the new zone."
+        ],
+        "regression_tests": [
+          "Test that existing zones continue to pull down their respective configurations and page designs.",
+          "Ensure that the limited-menu configurations for other non-traditional zones remain unaffected."
+        ],
+        "integration_tests": [
+          "Validate that the POS system correctly integrates with the central configuration management system to pull down the new zone settings.",
+          "Check data flow from the POS system to the reporting system for stores in the new zone."
+        ],
+        "exploratory_tests": [
+          "Test edge cases where a store is incorrectly assigned to both the new zone and an existing non-traditional zone.",
+          "Explore the behavior when switching a store from an existing non-traditional zone to the new zone and vice versa."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change involves a configuration update to support a new zone, affecting POS configuration and menu design, but does not introduce new features or integrations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 15,
+          "notes": "The effort is focused on verifying configuration changes and ensuring no regression in existing zone behaviors."
+        },
+        "clarification_flags": [
+          "Clarify if there are any specific properties or stores that should be prioritized for testing in the new zone.",
+          "Confirm if there are any dependencies on external systems for the configuration pull-down process."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-14",
+      "title": "Digital Ordering App Version Upgrade \u2014 Multi-Device and Multi-OS Compatibility Testing",
+      "change_type": "Version upgrade (third-party application)",
+      "system_area": "Tablet-based digital ordering application, device and OS compatibility",
+      "ground_truth_scope": "Functional testing across 4 device/OS combinations (Gen 10 \u00d7 iOS 18.5, Gen 10 \u00d7 iOS 26.1, Gen 11 \u00d7 iOS 18.5, Gen 11 \u00d7 iOS 26.1); core app workflow validation on each combination; regression on existing digital ordering functionality; exploratory testing on new version features once release notes are available; priority order: iOS 18.5 before iOS 26.1.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-14",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:07:44.510904Z",
+        "functional_tests": [
+          "Validate app launch and login functionality on Gen 10 and Gen 11 tablets running iOS 18.5.",
+          "Validate app launch and login functionality on Gen 10 and Gen 11 tablets running iOS 26.1.",
+          "Test order placement and confirmation process on both hardware generations and OS versions.",
+          "Verify menu navigation and item selection across all devices and OS versions.",
+          "Check payment processing and receipt generation on all configurations."
+        ],
+        "smoke_tests": [
+          "Ensure app stability and no crashes on app launch across all devices and OS versions.",
+          "Verify basic network connectivity and data sync functionality.",
+          "Check for any UI rendering issues on different screen sizes and OS versions."
+        ],
+        "regression_tests": [
+          "Test existing loyalty program integration and point accrual on iOS 18.5.",
+          "Verify historical order retrieval and display on iOS 18.5.",
+          "Check for any regressions in user profile management features."
+        ],
+        "integration_tests": [
+          "Validate end-to-end order processing from app to backend systems on iOS 18.5.",
+          "Test integration with payment gateways for both iOS versions.",
+          "Ensure data synchronization with inventory management systems."
+        ],
+        "exploratory_tests": [
+          "Explore app behavior under poor network conditions on both OS versions.",
+          "Test app performance with a large number of menu items loaded.",
+          "Investigate any new features or UI changes once vendor release notes are available."
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "The change involves a new version upgrade of a third-party application with potential impacts on multiple devices and OS versions, requiring comprehensive testing."
+        },
+        "effort_estimate": {
+          "min_test_cases": 25,
+          "max_test_cases": 40,
+          "notes": "Effort estimate accounts for testing across multiple device and OS combinations, with priority on iOS 18.5."
+        },
+        "clarification_flags": [
+          "Pending vendor release notes to identify specific new features or bug fixes.",
+          "Confirmation on whether any specific new features need targeted testing."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-15",
+      "title": "Gift Card Transaction Cancel Messaging Fix \u2014 Validate Correct Terminal Display With Cloud Processing Disabled",
+      "change_type": "Bug fix (UI messaging mismatch caused by mismatched configuration files)",
+      "system_area": "Gift card processing, POS terminal display, backend cloud processing",
+      "ground_truth_scope": "Functional test of cancel message display with backend cloud processing disabled; validation that CANCEL TRANSACTION message appears and not the incorrect variant; regression on overall gift card transaction flow (initiate, process, cancel, complete); configuration file validation; smoke test on gift card processing with cloud processing re-enabled.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-15",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:07:55.998553Z",
+        "functional_tests": [
+          "Verify that the POS terminal displays 'CANCEL TRANSACTION' when a gift card transaction is cancelled with cloud processing disabled.",
+          "Check that the configuration files are correctly set to ensure the correct message is displayed on the POS terminal."
+        ],
+        "smoke_tests": [
+          "Ensure that the POS terminal operates normally with cloud processing disabled.",
+          "Verify that other transaction types (e.g., sale, refund) display the correct messages on the POS terminal."
+        ],
+        "regression_tests": [
+          "Test that the POS terminal displays the correct messages for all transaction types with cloud processing enabled.",
+          "Verify that gift card transactions can still be processed and cancelled correctly with cloud processing enabled."
+        ],
+        "integration_tests": [
+          "Confirm that the POS terminal correctly interacts with the backend when cloud processing is re-enabled, ensuring no message mismatches occur.",
+          "Validate that the configuration file changes do not affect other system integrations, such as payment gateways or inventory systems."
+        ],
+        "exploratory_tests": [
+          "Test cancelling a gift card transaction under various network conditions with cloud processing disabled.",
+          "Attempt to cancel a gift card transaction after partially completing it to see if the correct message is displayed."
+        ],
+        "coverage_depth": {
+          "level": "LOW",
+          "justification": "The change is a bug fix related to UI messaging caused by configuration file mismatches, with no new features or integrations."
+        },
+        "effort_estimate": {
+          "min_test_cases": 5,
+          "max_test_cases": 10,
+          "notes": "The scope is limited due to the nature of the bug fix, focusing on verifying correct messaging and ensuring no side effects."
+        },
+        "clarification_flags": [
+          "Confirm if there are specific configuration files that need to be validated or if any overrides need to be identified and removed."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-16",
+      "title": "Regression Testing for Existing Serialized Coupons After New Promotional BIN Ranges Added",
+      "change_type": "Regression test (new content records added, validate no interference with existing)",
+      "system_area": "Coupon and discount processing, POS, content management system",
+      "ground_truth_scope": "Regression testing of all existing serialized coupon and discount types with new BIN ranges in place; validation that existing BIN ranges still resolve correctly at POS; smoke test on new promotional BIN ranges; conflict testing between old and new BIN range boundaries; deployment readiness check.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-16",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:09:04.507265Z",
+        "functional_tests": [
+          "Verify existing serialized coupons apply correct discounts at POS.",
+          "Validate that existing discounts are correctly processed in the content management system.",
+          "Check that existing BIN ranges are not altered in the content management system."
+        ],
+        "smoke_tests": [
+          "Ensure the POS system is operational after new BIN ranges are added.",
+          "Verify that the content management system is accessible and responsive."
+        ],
+        "regression_tests": [
+          "Test a sample of existing serialized coupons to ensure they still apply correctly.",
+          "Perform end-to-end testing of discount application from content management to POS.",
+          "Validate that no errors occur when processing transactions with existing coupons."
+        ],
+        "integration_tests": [
+          "Confirm that the integration between the content management system and POS is unaffected by the new BIN ranges.",
+          "Test the data flow from the content management system to the POS for existing coupons."
+        ],
+        "exploratory_tests": [
+          "Explore edge cases where multiple coupons and discounts are applied simultaneously.",
+          "Investigate any unusual behavior in the content management system related to coupon processing."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The focus is on ensuring enhancements (new BIN ranges) do not disrupt existing functionality, which aligns with medium coverage depth."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 20,
+          "notes": "The effort is focused on validating existing functionality remains stable with the introduction of new BIN ranges."
+        },
+        "clarification_flags": [
+          "Confirm the exact number of existing serialized coupons to be tested.",
+          "Clarify the timeline for regression testing completion relative to the go-live date."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-17",
+      "title": "Antivirus Exclusion Script Deployment for Remote Management Tool \u2014 POS Terminal Validation",
+      "change_type": "Security / infrastructure (script deployment and antivirus configuration)",
+      "system_area": "POS terminals, Windows Defender antivirus, remote management tooling",
+      "ground_truth_scope": "Functional test of script execution on POS terminals across multiple lab environments; validation that antivirus no longer flags the remote management tool after script runs; regression on core POS terminal functionality post-script; smoke test on remote management connectivity; validation across different terminal hardware or OS configurations if applicable.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-17",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:08:14.682608Z",
+        "functional_tests": [
+          "Verify that the script correctly adds the antivirus exclusion for the remote tunneling tool on a POS terminal.",
+          "Ensure that the remote management tool is no longer flagged as a threat by Windows Defender after the script execution.",
+          "Confirm that the script executes without errors in the lab environment."
+        ],
+        "smoke_tests": [
+          "Check that basic POS terminal operations (e.g., transaction processing, receipt printing) function correctly after the script execution.",
+          "Verify that remote support sessions can be initiated successfully post-exclusion."
+        ],
+        "regression_tests": [
+          "Test existing antivirus exclusions to ensure they remain unaffected by the new script.",
+          "Validate that system performance metrics (e.g., CPU, memory usage) on the POS terminal remain within normal ranges post-execution."
+        ],
+        "integration_tests": [
+          "Conduct end-to-end testing of a remote support session from initiation to termination using the remote management tool.",
+          "Verify that the POS terminal can still communicate with the central store management system after the script is applied."
+        ],
+        "exploratory_tests": [
+          "Attempt to execute the script on a POS terminal with a different antivirus configuration to observe any unexpected behavior.",
+          "Test the script on a POS terminal with a non-standard software setup to identify potential edge cases."
+        ],
+        "coverage_depth": {
+          "level": "MEDIUM",
+          "justification": "The change involves a security configuration update which is critical but not as extensive as a new feature or integration."
+        },
+        "effort_estimate": {
+          "min_test_cases": 10,
+          "max_test_cases": 15,
+          "notes": "The scope includes functional verification, smoke testing, and some exploratory testing due to the security nature of the change."
+        },
+        "clarification_flags": [
+          "Confirm the specific lab environments where the script needs to be tested.",
+          "Clarify if there are any specific POS terminal models or configurations that require additional focus."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-18",
+      "title": "POS Crew Notification Feature Enablement on POS Workstations",
+      "change_type": "New feature (POS notification scheduling and display system)",
+      "system_area": "POS workstation, employee clock-in workflow, notification management",
+      "ground_truth_scope": "Functional test of notification creation and scheduling by a manager role; functional test of notification display on POS workstation at crew member clock-in; validation of notification content accuracy; regression on clock-in workflow to confirm no disruption; exploratory testing on edge cases such as multiple active notifications, expired notifications, and no notification scheduled.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-18",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:08:24.754874Z",
+        "functional_tests": [
+          "Verify that notifications can be scheduled by store owners and managers.",
+          "Check that notifications appear on the POS workstation screen when a crew member clocks in.",
+          "Ensure notifications can be customized for different types of messages (promotions, policy changes, etc.).",
+          "Test the ability to schedule notifications for specific dates and times.",
+          "Validate that notifications are displayed correctly across different POS workstation models."
+        ],
+        "smoke_tests": [
+          "Confirm that the POS workstation operates normally after the feature is enabled.",
+          "Verify that the clock-in process is not disrupted by the new notification feature."
+        ],
+        "regression_tests": [
+          "Test existing clock-in workflows to ensure they are unaffected.",
+          "Check that existing POS functionalities (e.g., transaction processing, receipt printing) remain operational.",
+          "Validate that the notification management system does not interfere with existing POS system settings."
+        ],
+        "integration_tests": [
+          "Verify integration between the POS notification system and the employee clock-in system.",
+          "Test data flow from the notification management system to the POS workstations.",
+          "Ensure that notifications are correctly synchronized across multiple POS workstations in the same store."
+        ],
+        "exploratory_tests": [
+          "Test the behavior of the notification system when multiple crew members clock in simultaneously.",
+          "Check how the system handles overlapping notifications scheduled for the same time.",
+          "Explore the system's response to invalid or corrupted notification data."
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "The change involves a new feature that affects core POS workstation functionality and employee workflows."
+        },
+        "effort_estimate": {
+          "min_test_cases": 20,
+          "max_test_cases": 30,
+          "notes": "The high coverage depth is due to the introduction of a new feature that integrates with critical POS and employee systems."
+        },
+        "clarification_flags": [
+          "Details on how notifications are managed and stored in the system.",
+          "Information on any user permissions or roles required to schedule notifications.",
+          "Clarification on whether notifications can be dismissed or snoozed by crew members."
+        ]
+      }
+    },
+    {
+      "spec_id": "SPEC-19",
+      "title": "Secondary DNS Provider Change \u2014 Broad System Regression Across All Network-Dependent Functions",
+      "change_type": "Infrastructure / network configuration change (DNS provider update)",
+      "system_area": "Network infrastructure, DNS resolution, payment processing, online ordering, delivery integrations, loyalty, reporting, employee management",
+      "ground_truth_scope": "Connectivity smoke test across all listed system areas; payment device functional testing (multiple models); delivery platform integration validation; online ordering platform order flow; loyalty and gift card processing including offline mode; kitchen display order routing; reporting and analytics data validation; employee creation workflow; broad regression on all areas listed in the spec.",
+      "atsr_recommendation": {
+        "spec_id": "SPEC-19",
+        "model_used": "openai/gpt-4o",
+        "timestamp": "2026-03-20T11:08:34.584603Z",
+        "functional_tests": [
+          "Verify DNS resolution for payment device connectivity",
+          "Test DNS resolution for Wi-Fi network connectivity",
+          "Check DNS resolution for remote management tool functions",
+          "Ensure DNS resolution for kitchen display system order routing",
+          "Validate DNS resolution for order storing and picking",
+          "Test DNS resolution for digital menu board and price change functionality"
+        ],
+        "smoke_tests": [
+          "Basic connectivity test for payment processing",
+          "Basic connectivity test for online ordering platform",
+          "Basic connectivity test for delivery platform integrations",
+          "Basic connectivity test for loyalty processing"
+        ],
+        "regression_tests": [
+          "Full regression on payment processing workflows",
+          "Full regression on online ordering platform",
+          "Full regression on delivery platform integrations",
+          "Full regression on loyalty and gift card processing",
+          "Full regression on reporting and analytics",
+          "Full regression on employee management workflows",
+          "Full regression on sales performance notification tools",
+          "Full regression on third-party order alert integrations"
+        ],
+        "integration_tests": [
+          "End-to-end test for payment processing with DNS change",
+          "End-to-end test for online ordering with DNS change",
+          "End-to-end test for delivery platform integrations with DNS change",
+          "End-to-end test for loyalty processing in offline mode with DNS change"
+        ],
+        "exploratory_tests": [
+          "Test DNS resolution under high network load conditions",
+          "Test DNS resolution during network failover scenarios",
+          "Test DNS resolution with intermittent network connectivity",
+          "Test DNS resolution impact on database reload and refresh"
+        ],
+        "coverage_depth": {
+          "level": "HIGH",
+          "justification": "The change affects DNS resolution, a critical infrastructure component, impacting all network-dependent functions across the system."
+        },
+        "effort_estimate": {
+          "min_test_cases": 50,
+          "max_test_cases": 80,
+          "notes": "The broad impact on network-dependent functions necessitates extensive testing across multiple system areas."
+        },
+        "clarification_flags": [
+          "Confirm if there are any specific SLAs or performance benchmarks for DNS resolution that need validation.",
+          "Clarify if there are any specific geographic regions or network segments that require focused testing."
+        ]
+      }
+    }
+  ]
+}
