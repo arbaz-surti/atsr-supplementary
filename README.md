@@ -11,10 +11,10 @@ Supplementary materials, code, data, and analysis outputs for:
 single-run evaluation; its files are retained unchanged under `original-evaluation/`
 (see `CHANGELOG.md`).
 
-**Persistent identifier:** the DOI-assigning Zenodo record for this archive is given in
-`CITATION.cff` and in the manuscript's Code Availability statement. The GitHub
-repository (`https://github.com/arbaz-surti/atsr-supplementary`) is the development
-copy; the Zenodo record is the citable, versioned snapshot.
+**Persistent identifier:** Zenodo DOI `10.5281/zenodo.22839182` for version 2.0.0
+(https://doi.org/10.5281/zenodo.22839182); concept DOI `10.5281/zenodo.22839181` resolves to the
+latest version. The GitHub repository (`https://github.com/arbaz-surti/atsr-supplementary`)
+is the development copy; the Zenodo record is the citable, versioned snapshot.
 
 ---
 

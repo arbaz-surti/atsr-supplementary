@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased (post-2.0.0 metadata only)
+
+- Recorded the Zenodo DOI minted for release v2.0.0 (`10.5281/zenodo.22839182`;
+  concept DOI `10.5281/zenodo.22839181`) in `CITATION.cff`, `LICENSE-DATA`, and
+  `README.md`; regenerated `MANIFEST-SHA256.txt`. No study files changed.
+
 ## 2.0.0 — 2026-09-18
 
 Expanded evaluation under the frozen protocol `ATSR-SREP-R2-v1.0`, prepared for the
