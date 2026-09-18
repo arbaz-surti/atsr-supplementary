@@ -1,0 +1,14 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "locked_date": "2026-09-13",
+  "hash_algorithm": "SHA-256",
+  "files": {
+    "research/revision_protocol/protocol.md": "d1ff3d4014d866c55abbbe332b883847e8081ed076366b189abfbb16b83af378",
+    "research/revision_protocol/protocol.json": "33cd65d262906acfff82363bb92eed5901aa7e6ade5462c81975ed6649a957a7",
+    "research/revision_protocol/prompts.py": "56e767f2bfa3c0432c737ce65685e95a6a581c54fb9ef4ef7e5ba04d194a27d7",
+    "research/revision_protocol/prompt-manifest.json": "f283f344cc06cc2e3c9f6e5ecd34796daadcb574ad08758b9517c60f94bfedcd",
+    "research/revision_protocol/model-availability-2026-09-13.json": "76f0570e9625ffb1162674cc2434d108715595e2c993cb84528b78bdd164b30f",
+    "research/revision_protocol/validate_protocol.py": "ad033d562a99af58cdc87c49aea819ae60b9ae59601fe940bc0971769fea46cf",
+    "supplementary/data/specifications.json": "48d94cce163cf21efa712939bd4334b0a89260434aafe0d83a00cbd2dd3856f0"
+  }
+}

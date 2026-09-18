@@ -1,0 +1,11 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "updated_at": "2026-09-14T01:15:47.176077Z",
+  "queue_items": 486,
+  "terminal_items": 486,
+  "pending_items": 0,
+  "this_invocation": {
+    "valid": 389,
+    "invalid_json": 82
+  }
+}

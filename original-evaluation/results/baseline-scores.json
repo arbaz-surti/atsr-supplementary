@@ -142,20 +142,20 @@
   "dimension_totals": {
     "completeness": 73,
     "specificity": 63,
-    "risk_calibration": 63,
+    "risk_calibration": 64,
     "integration_awareness": 56,
     "clarification_flag_quality": 50
   },
   "dimension_averages": {
     "completeness": 4.06,
     "specificity": 3.50,
-    "risk_calibration": 3.50,
+    "risk_calibration": 3.56,
     "integration_awareness": 3.11,
     "clarification_flag_quality": 2.78
   },
-  "grand_total": 305,
+  "grand_total": 306,
   "max_possible": 450,
-  "overall_percentage": 67.8,
+  "overall_percentage": 68.0,
   "score_range": {
     "highest": {"spec_id": "SPEC-14 / SPEC-19", "score": 20},
     "lowest": {"spec_id": "SPEC-02", "score": 13}

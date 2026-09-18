@@ -1,0 +1,88 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "created_at": "2026-09-14",
+  "release_gate": "Do not distribute until practitioner qualification, ethics arrangement, and prospective consent records are confirmed.",
+  "source_hashes": {
+    "dataset": "48d94cce163cf21efa712939bd4334b0a89260434aafe0d83a00cbd2dd3856f0",
+    "queue_manifest": "56282baa957d59b33eda8da6a9e9d1843afaa202472d8132c02ae078a44c8db8",
+    "attempts": "de0eeef160320d2182173a9b890d19fe4e86fbf7fd6de4ffbbc5ca6476bb8832",
+    "parsed_outputs": "e2c0d87f46540ae934db3e91843a4b5b5e958db165309983383ed39b2304efab",
+    "consensus_workbook": "6362cb097a3bb8fe2dff7cae672a14918765b80294fc81c0ffd49e266a7c2d04",
+    "final_rubric": "dcf39358be89355afc013cdccf55888ca5a96b02862e763c5c39a9acb07b2355"
+  },
+  "anchor_selection": {
+    "seed": 20260913,
+    "material": "model_id|condition|spec_id|20260913 (literal | delimiters, no surrounding whitespace)",
+    "formula": "1 + (integer value of first 8 SHA-256 hex digits modulo 3)",
+    "observations": 162,
+    "scorable": 132,
+    "structural_failures": 30
+  },
+  "presentation_order": "Ascending SHA-256 of protocol_id|rater_id|work_id|rating-order|20260913",
+  "blind_id": "RATE- plus first 12 uppercase SHA-256 hex digits of protocol_id|rater_id|work_id|blind-id|20260913",
+  "invalid_output_treatment": "Retained as Not scorable with blank rubric scores; never regenerated, repaired, or assigned a rating.",
+  "mapping_file": {
+    "path": "research/revision_protocol/blind/rating-item-map.jsonl",
+    "records": 810,
+    "sha256": "bb231db1935af724be78ad152d4b9a72084aa5479d1f0e9a7dffdb3a42c3ca9d"
+  },
+  "packets": [
+    {
+      "filename": "rating-packet-author.xlsx",
+      "rater_id": "AUTHOR",
+      "observations": 486,
+      "scorable": 401,
+      "structural_failures": 85,
+      "sha256": "05a67c677d85f8f9a0b003bbdda54f99af0dcadb17914520f05aa9061293e55c",
+      "checks": {
+        "sheetNames": true,
+        "itemCount": true,
+        "uniqueBlindIds": true,
+        "scoreInputsBlank": true,
+        "statusCounts": true,
+        "formulaErrorsZero": true
+      }
+    },
+    {
+      "filename": "rating-packet-practitioner-01.xlsx",
+      "rater_id": "PRACTITIONER-01",
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30,
+      "sha256": "a3f01a9bdb30601894de1349a79b513bc42aad5f5a31c582203f3b393539835b",
+      "checks": {
+        "sheetNames": true,
+        "itemCount": true,
+        "uniqueBlindIds": true,
+        "scoreInputsBlank": true,
+        "statusCounts": true,
+        "formulaErrorsZero": true
+      }
+    },
+    {
+      "filename": "rating-packet-practitioner-02.xlsx",
+      "rater_id": "PRACTITIONER-02",
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30,
+      "sha256": "67f6782550de35f68f750287982421df1e5ad711e1ea122eb66c209db5582ada",
+      "checks": {
+        "sheetNames": true,
+        "itemCount": true,
+        "uniqueBlindIds": true,
+        "scoreInputsBlank": true,
+        "statusCounts": true,
+        "formulaErrorsZero": true
+      }
+    }
+  ],
+  "mapping_checks": {
+    "records": true,
+    "authorCoversQueue": true,
+    "practitionerWorkSetsMatch": true,
+    "practitionerOrdersDiffer": true,
+    "practitionerBlindIdsDiffer": true,
+    "allBlindIdsUnique": true,
+    "anchorFormulaSatisfied": true
+  }
+}

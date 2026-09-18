@@ -1,0 +1,32 @@
+{
+  "title": "ATSR Supplementary Materials and Reproducibility Archive",
+  "version": "2.0.0",
+  "upload_type": "dataset",
+  "publication_date": "2026-09-18",
+  "creators": [
+    {
+      "name": "Surti, Arbaz",
+      "affiliation": "Independent researcher"
+    }
+  ],
+  "description": "<p>Code, frozen protocol, prompts, specifications, raw model outputs, ground-truth and rating workbooks, de-identified ratings, and the analysis script and outputs for the expanded evaluation of the AI-Assisted Test Scope Recommender (ATSR) reported in <em>AI-Assisted Test Scope Recommendation for Manual QA: A Framework and Evaluation</em> (Arbaz Surti; manuscript under revision at Scientific Reports, 2026).</p><p>The evaluation compares three prompt conditions (naive, generic structured QA, ATSR) across three model families (GPT-4o 2024-11-20, Claude Sonnet 4.6, Llama 3.3 70B) with three runs each on 18 frozen specifications (486 generation cells), rated blind by the author and two independent QA practitioners on a five-dimension rubric after a three-person consensus ground truth. Every statistic in the manuscript is reproduced byte-for-byte by <code>research/analyze_operative_ratings.py</code> from the archived files; see README.md for instructions. Version 1.0.0 (the original single-model evaluation) is retained under <code>original-evaluation/</code>.</p><p>Participant identities, consent records, and the identity-to-code mapping are not included.</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "software testing",
+    "manual QA",
+    "test scope recommendation",
+    "large language models",
+    "prompt engineering",
+    "reproducibility",
+    "inter-rater reliability"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/arbaz-surti/atsr-supplementary",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Code files are additionally licensed under the MIT Licence (LICENSE-CODE). Data and documents are CC BY 4.0 (LICENSE-DATA)."
+}

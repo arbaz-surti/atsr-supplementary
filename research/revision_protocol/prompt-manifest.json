@@ -1,0 +1,45 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "frozen_date": "2026-09-13",
+  "hash_algorithm": "SHA-256 over UTF-8 runtime string",
+  "source_file": {
+    "path": "research/revision_protocol/prompts.py",
+    "sha256": "56e767f2bfa3c0432c737ce65685e95a6a581c54fb9ef4ef7e5ba04d194a27d7"
+  },
+  "prompts": {
+    "naive": {
+      "sha256": "c43aa0745c0965e011b4556aa2133852e0d371bdbb5f2cac1b10d4de0adf7a12",
+      "utf8_bytes": 739,
+      "historical_runtime_exact_match": true
+    },
+    "generic_structured_qa": {
+      "sha256": "40c8337d31114cdd6d422dced8e591a6e098788c6277e39033383b4b59946cae",
+      "utf8_bytes": 1750,
+      "historical_runtime_exact_match": null
+    },
+    "atsr": {
+      "sha256": "f2dddeb62803b1b952db3cb1b791a8a5250e59605ac69a1ba0b7507e0dde9dd7",
+      "utf8_bytes": 2448,
+      "historical_runtime_exact_match": false,
+      "historical_reasoning_instructions_preserved": true,
+      "shared_schema_suffix": true
+    }
+  },
+  "archived_historical_atsr_prompt": {
+    "sha256": "4e23a4bcc2c44b075b37f0754a504eda5122ac230da2aedc842dda2da7d38776",
+    "utf8_bytes": 2770,
+    "historical_runtime_exact_match": true
+  },
+  "shared_output_schema": {
+    "sha256": "e58e09e8944bf18ab50482273d505948c4bde9339d246e4a89400ea58aaa3c7d",
+    "utf8_bytes": 535,
+    "applies_to": ["naive", "generic_structured_qa", "atsr"]
+  },
+  "shared_user_prompt_builder_source": {
+    "sha256": "1e09393db97bafe3470046763d7672f904f4a2dd999213041476b072975ea928"
+  },
+  "dataset": {
+    "path": "supplementary/data/specifications.json",
+    "sha256": "48d94cce163cf21efa712939bd4334b0a89260434aafe0d83a00cbd2dd3856f0"
+  }
+}

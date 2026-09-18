@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this archive, please cite both the archive and the manuscript."
+type: dataset
+title: "ATSR Supplementary Materials and Reproducibility Archive"
+version: 2.0.0
+date-released: 2026-09-18
+authors:
+  - family-names: Surti
+    given-names: Arbaz
+    email: arbaz.m.surti@gmail.com
+    affiliation: "Independent researcher"
+repository-code: "https://github.com/arbaz-surti/atsr-supplementary"
+license: "MIT AND CC-BY-4.0"
+# doi: 10.5281/zenodo.XXXXXXX   <- fill in from the Zenodo record before release
+keywords:
+  - software testing
+  - manual QA
+  - test scope
+  - large language models
+  - prompt engineering
+  - reproducibility
+abstract: >-
+  Code, frozen protocol, prompts, specifications, raw model outputs, ground-truth and
+  rating workbooks, de-identified ratings, and the analysis script and outputs for the
+  expanded evaluation of the AI-Assisted Test Scope Recommender (ATSR): three prompt
+  conditions, three model families, three runs, 18 specifications, and three blinded
+  raters under protocol ATSR-SREP-R2-v1.0.
+preferred-citation:
+  type: article
+  title: "AI-Assisted Test Scope Recommendation for Manual QA: A Framework and Evaluation"
+  authors:
+    - family-names: Surti
+      given-names: Arbaz
+  journal: "Scientific Reports"
+  year: 2026
+  notes: "Manuscript under revision."

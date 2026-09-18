@@ -1,0 +1,43 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "analysis_date": "2026-09-18",
+  "rating_set_status": "operative_original",
+  "provenance_note": "The author designated the renewed HTML-extracted ratings as the operative/original rating set. The earlier locked rating set was used only for blind-item metadata and remains preserved as a superseded audit trail.",
+  "rationale_availability": "Unavailable in Ratings.html; rationale fields are null/blank and were not copied from the superseded ratings.",
+  "input_hashes": {
+    "ratings_extracted": "7f69c9ef8b8b3d8ce23d77e7c0baf0aa97706f649bb86ded5b880d4662c1a8ab",
+    "locked_long_metadata_source": "85eb851bb61dcafeb85be453b10e8174f4811202dfbd22d9f6f7b8384d26ed6a",
+    "locked_results_for_unchanged_depth_diagnostic": "4cec4dc52932ef9400ed6d8f5dde5ab718e9e5d6aebdee498ff68001cac3c6e6",
+    "extraction_manifest": "c78084f883491241c80e8b796e814e4ec05ec41d62314f8b5430c4443941cc34",
+    "analysis_script": "58de3d0e871fe21e222d6c6aaf08933b0fd2ba8a95ccad9e66c67fd2d2cd60e4"
+  },
+  "validation_checks": {
+    "assignment_count": 810,
+    "scorable_assignment_count": 665,
+    "structural_failure_assignment_count": 145,
+    "unique_rater_blind_item_keys": true,
+    "locked_key_set_exact_match": true,
+    "spec_id_mapping_exact_match": true,
+    "terminal_status_alignment": true,
+    "scores_are_integers_1_to_5": true,
+    "all_totals_recalculate": true,
+    "invalid_observations_have_blank_scores": true,
+    "assignment_counts_by_rater": {
+      "AUTHOR": 486,
+      "PRACTITIONER-01": 162,
+      "PRACTITIONER-02": 162
+    },
+    "scorable_counts_by_rater": {
+      "AUTHOR": 401,
+      "PRACTITIONER-01": 132,
+      "PRACTITIONER-02": 132
+    }
+  },
+  "output_hashes": {
+    "ratings-long.jsonl": "0eb5ec6b83435e1d06462751e6fbf2dbc08c8a73fe59b663b9046c07c258499c",
+    "ratings-unblinded.csv": "d1395c21854f7b132c30b32ed2d88cba86d73e05751063e6d27aab75700a687e",
+    "analysis-results.json": "d9e7bac256afce44dec113a0e315f1d569e213cc2a58732228f85337e7cd5406",
+    "analysis-report.md": "f9dd4335c8497635ed77b3b7c5cf6911b2a93d0c825af8546915664d63df3e3e"
+  },
+  "analysis_command": ".codex-tmp/operative-analysis-venv/bin/python research/analyze_operative_ratings.py --ratings <ratings-extracted.csv> --locked-long <ratings-long.jsonl> --locked-results <analysis-results.json> --extraction-manifest <extraction-manifest.json> --output-dir <new-directory>"
+}

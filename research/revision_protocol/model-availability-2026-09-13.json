@@ -1,0 +1,60 @@
+{
+  "captured_date": "2026-09-13",
+  "source": "https://openrouter.ai/api/v1/models and per-model /endpoints responses",
+  "purpose": "Pre-generation availability record; final run metadata must record the endpoint actually returned for every response.",
+  "models": [
+    {
+      "openrouter_model_id": "openai/gpt-4o-2024-11-20",
+      "display_name": "OpenAI: GPT-4o (2024-11-20)",
+      "created_unix": 1732127594,
+      "pinned_provider": "OpenAI",
+      "provider_tag_observed": "openai",
+      "context_length": 128000,
+      "max_completion_tokens": 16384,
+      "quantization": "unknown",
+      "supports_temperature": true,
+      "supports_max_tokens": true,
+      "supports_response_format": true,
+      "supports_structured_outputs": true,
+      "supports_seed": true,
+      "price_per_input_token_usd": "0.0000025",
+      "price_per_output_token_usd": "0.00001"
+    },
+    {
+      "openrouter_model_id": "anthropic/claude-sonnet-4.6",
+      "display_name": "Anthropic: Claude Sonnet 4.6",
+      "created_unix": 1771342990,
+      "pinned_provider": "Anthropic",
+      "provider_tag_observed": "anthropic",
+      "underlying_endpoint_observed": "anthropic/claude-4.6-sonnet-20260217",
+      "context_length": 1000000,
+      "max_completion_tokens": 128000,
+      "quantization": "unknown",
+      "supports_temperature": true,
+      "supports_max_tokens": true,
+      "supports_response_format": true,
+      "supports_structured_outputs": true,
+      "supports_seed": false,
+      "price_per_input_token_usd": "0.000003",
+      "price_per_output_token_usd": "0.000015"
+    },
+    {
+      "openrouter_model_id": "meta-llama/llama-3.3-70b-instruct",
+      "display_name": "Meta: Llama 3.3 70B Instruct",
+      "created_unix": 1733506137,
+      "pinned_provider": "DeepInfra",
+      "provider_tag_observed": "deepinfra/turbo",
+      "context_length": 131072,
+      "max_completion_tokens": 16384,
+      "quantization": "fp8",
+      "supports_temperature": true,
+      "supports_max_tokens": true,
+      "supports_response_format": true,
+      "supports_structured_outputs": true,
+      "supports_seed": true,
+      "price_per_input_token_usd": "0.0000001",
+      "price_per_output_token_usd": "0.00000032"
+    }
+  ]
+}
+

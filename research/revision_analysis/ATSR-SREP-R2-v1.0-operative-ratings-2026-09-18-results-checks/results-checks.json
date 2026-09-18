@@ -1,0 +1,481 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "purpose": "Results-section cross-checks; item 4 is a POST-HOC sensitivity analysis",
+  "analysis_seed": 20260913,
+  "bootstrap_replicates": 20000,
+  "input_hashes": {
+    "ratings-long.jsonl": "0eb5ec6b83435e1d06462751e6fbf2dbc08c8a73fe59b663b9046c07c258499c",
+    "analysis-results.json": "d9e7bac256afce44dec113a0e315f1d569e213cc2a58732228f85337e7cd5406",
+    "attempts.jsonl": "de0eeef160320d2182173a9b890d19fe4e86fbf7fd6de4ffbbc5ca6476bb8832"
+  },
+  "per_specification_condition_means": [
+    {
+      "spec_id": "SPEC-01",
+      "naive": 16.5,
+      "generic_structured_qa": 16.5,
+      "atsr": 19.5,
+      "atsr_minus_gsq": 3.0,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-02",
+      "naive": 14.833333333333334,
+      "generic_structured_qa": 17.75,
+      "atsr": 19.166666666666668,
+      "atsr_minus_gsq": 1.4166666666666679,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-03",
+      "naive": 15.5,
+      "generic_structured_qa": 16.75,
+      "atsr": 19.0,
+      "atsr_minus_gsq": 2.25,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-04",
+      "naive": 17.0,
+      "generic_structured_qa": 18.5,
+      "atsr": 22.0,
+      "atsr_minus_gsq": 3.5,
+      "contributing_models": {
+        "naive": 2,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-05",
+      "naive": 15.166666666666666,
+      "generic_structured_qa": 18.75,
+      "atsr": 19.5,
+      "atsr_minus_gsq": 0.75,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-06",
+      "naive": 16.0,
+      "generic_structured_qa": 18.25,
+      "atsr": 19.75,
+      "atsr_minus_gsq": 1.5,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-08",
+      "naive": 16.5,
+      "generic_structured_qa": 21.0,
+      "atsr": 18.5,
+      "atsr_minus_gsq": -2.5,
+      "contributing_models": {
+        "naive": 2,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-09",
+      "naive": 17.166666666666668,
+      "generic_structured_qa": 18.0,
+      "atsr": 20.5,
+      "atsr_minus_gsq": 2.5,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 3,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-10",
+      "naive": 16.0,
+      "generic_structured_qa": 17.5,
+      "atsr": 19.833333333333332,
+      "atsr_minus_gsq": 2.333333333333332,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-11",
+      "naive": 15.833333333333334,
+      "generic_structured_qa": 17.75,
+      "atsr": 18.5,
+      "atsr_minus_gsq": 0.75,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-12",
+      "naive": 16.333333333333332,
+      "generic_structured_qa": 17.5,
+      "atsr": 20.75,
+      "atsr_minus_gsq": 3.25,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 3,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-13",
+      "naive": 13.333333333333334,
+      "generic_structured_qa": 19.333333333333332,
+      "atsr": 21.333333333333332,
+      "atsr_minus_gsq": 2.0,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 3,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-14",
+      "naive": 17.166666666666668,
+      "generic_structured_qa": 18.75,
+      "atsr": 20.0,
+      "atsr_minus_gsq": 1.25,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-15",
+      "naive": 14.5,
+      "generic_structured_qa": 19.166666666666668,
+      "atsr": 19.666666666666668,
+      "atsr_minus_gsq": 0.5,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 3,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-16",
+      "naive": 17.333333333333332,
+      "generic_structured_qa": 18.0,
+      "atsr": 18.5,
+      "atsr_minus_gsq": 0.5,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-17",
+      "naive": 16.666666666666668,
+      "generic_structured_qa": 17.5,
+      "atsr": 19.333333333333332,
+      "atsr_minus_gsq": 1.8333333333333321,
+      "contributing_models": {
+        "naive": 3,
+        "generic_structured_qa": 2,
+        "atsr": 3
+      }
+    },
+    {
+      "spec_id": "SPEC-18",
+      "naive": 17.75,
+      "generic_structured_qa": 19.25,
+      "atsr": 20.0,
+      "atsr_minus_gsq": 0.75,
+      "contributing_models": {
+        "naive": 2,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    },
+    {
+      "spec_id": "SPEC-19",
+      "naive": 13.25,
+      "generic_structured_qa": 17.5,
+      "atsr": 18.75,
+      "atsr_minus_gsq": 1.25,
+      "contributing_models": {
+        "naive": 2,
+        "generic_structured_qa": 2,
+        "atsr": 2
+      }
+    }
+  ],
+  "per_specification_validation_against_locked_differences": {
+    "ATSR - GSQ": true,
+    "ATSR - Naive": true,
+    "GSQ - Naive": true
+  },
+  "depth_direction_on_scorable_anchor_outputs": {
+    "naive": {
+      "scorable": 50,
+      "exact": 33,
+      "under_assigned": 14,
+      "over_assigned": 3,
+      "assigned_depth_counts": {
+        "MEDIUM": 20,
+        "HIGH": 30
+      }
+    },
+    "generic_structured_qa": {
+      "scorable": 40,
+      "exact": 27,
+      "under_assigned": 11,
+      "over_assigned": 2,
+      "assigned_depth_counts": {
+        "MEDIUM": 17,
+        "HIGH": 23
+      }
+    },
+    "atsr": {
+      "scorable": 42,
+      "exact": 16,
+      "under_assigned": 26,
+      "over_assigned": 0,
+      "assigned_depth_counts": {
+        "MEDIUM": 22,
+        "LOW": 9,
+        "HIGH": 11
+      }
+    }
+  },
+  "risk_calibration_score_by_depth_distance_practitioner_ratings": {
+    "naive": {
+      "0": {
+        "n_ratings": 66,
+        "score_counts": {
+          "1": 1,
+          "2": 12,
+          "3": 31,
+          "4": 22,
+          "5": 0
+        },
+        "scored_4_or_5": 22
+      },
+      "1": {
+        "n_ratings": 34,
+        "score_counts": {
+          "1": 0,
+          "2": 5,
+          "3": 19,
+          "4": 9,
+          "5": 1
+        },
+        "scored_4_or_5": 10
+      }
+    },
+    "generic_structured_qa": {
+      "0": {
+        "n_ratings": 54,
+        "score_counts": {
+          "1": 0,
+          "2": 2,
+          "3": 21,
+          "4": 27,
+          "5": 4
+        },
+        "scored_4_or_5": 31
+      },
+      "1": {
+        "n_ratings": 26,
+        "score_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 11,
+          "4": 13,
+          "5": 2
+        },
+        "scored_4_or_5": 15
+      }
+    },
+    "atsr": {
+      "0": {
+        "n_ratings": 32,
+        "score_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 4,
+          "4": 19,
+          "5": 9
+        },
+        "scored_4_or_5": 28
+      },
+      "1": {
+        "n_ratings": 38,
+        "score_counts": {
+          "1": 0,
+          "2": 0,
+          "3": 6,
+          "4": 28,
+          "5": 4
+        },
+        "scored_4_or_5": 32
+      },
+      "2": {
+        "n_ratings": 14,
+        "score_counts": {
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 8,
+          "5": 3
+        },
+        "scored_4_or_5": 11
+      }
+    }
+  },
+  "post_hoc_four_dimension_total_excluding_risk_calibration": [
+    {
+      "contrast": "ATSR - GSQ",
+      "n_specifications": 18,
+      "first_mean": 15.675925925925924,
+      "second_mean": 14.606481481481483,
+      "paired_mean_difference": 1.0694444444444444,
+      "paired_median_difference": 1.208333333333333,
+      "bootstrap_95_ci_mean_difference": [
+        0.4767361111111112,
+        1.6064814814814818
+      ],
+      "wilcoxon_statistic": 15.5,
+      "wilcoxon_p_value": 0.003846788601171722,
+      "rank_biserial": 0.7973856209150327,
+      "positive_ties_negative": {
+        "positive": 15,
+        "ties": 1,
+        "negative": 2
+      },
+      "specification_differences": {
+        "SPEC-01": 2.25,
+        "SPEC-02": 1.416666666666666,
+        "SPEC-03": 2.0,
+        "SPEC-04": 2.75,
+        "SPEC-05": 0.5,
+        "SPEC-06": 0.75,
+        "SPEC-08": -2.25,
+        "SPEC-09": 2.5000000000000018,
+        "SPEC-10": 2.25,
+        "SPEC-11": 0.25,
+        "SPEC-12": 2.416666666666666,
+        "SPEC-13": 1.5,
+        "SPEC-14": 1.0,
+        "SPEC-15": 0.16666666666666785,
+        "SPEC-16": -0.25,
+        "SPEC-17": 0.5,
+        "SPEC-18": 0.0,
+        "SPEC-19": 1.5
+      },
+      "holm_adjusted_p_value": 0.003846788601171722
+    },
+    {
+      "contrast": "ATSR - Naive",
+      "n_specifications": 18,
+      "first_mean": 15.675925925925924,
+      "second_mean": 12.782407407407407,
+      "paired_mean_difference": 2.893518518518518,
+      "paired_median_difference": 2.875,
+      "bootstrap_95_ci_mean_difference": [
+        2.37962962962963,
+        3.449189814814805
+      ],
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_p_value": 0.00019575042504300203,
+      "rank_biserial": 1.0,
+      "positive_ties_negative": {
+        "positive": 18,
+        "ties": 0,
+        "negative": 0
+      },
+      "specification_differences": {
+        "SPEC-01": 2.916666666666666,
+        "SPEC-02": 3.333333333333332,
+        "SPEC-03": 2.666666666666666,
+        "SPEC-04": 4.0,
+        "SPEC-05": 3.5,
+        "SPEC-06": 2.666666666666666,
+        "SPEC-08": 2.25,
+        "SPEC-09": 2.833333333333334,
+        "SPEC-10": 3.0,
+        "SPEC-11": 1.666666666666666,
+        "SPEC-12": 3.25,
+        "SPEC-13": 6.166666666666666,
+        "SPEC-14": 1.833333333333334,
+        "SPEC-15": 3.166666666666668,
+        "SPEC-16": 0.5833333333333339,
+        "SPEC-17": 2.5,
+        "SPEC-18": 1.75,
+        "SPEC-19": 4.0
+      },
+      "holm_adjusted_p_value": 0.000582127196449205
+    },
+    {
+      "contrast": "GSQ - Naive",
+      "n_specifications": 18,
+      "first_mean": 14.606481481481483,
+      "second_mean": 12.782407407407407,
+      "paired_mean_difference": 1.8240740740740737,
+      "paired_median_difference": 1.583333333333333,
+      "bootstrap_95_ci_mean_difference": [
+        1.287037037037037,
+        2.4305555555555554
+      ],
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_p_value": 0.00019404239881640168,
+      "rank_biserial": 1.0,
+      "positive_ties_negative": {
+        "positive": 18,
+        "ties": 0,
+        "negative": 0
+      },
+      "specification_differences": {
+        "SPEC-01": 0.6666666666666661,
+        "SPEC-02": 1.916666666666666,
+        "SPEC-03": 0.6666666666666661,
+        "SPEC-04": 1.25,
+        "SPEC-05": 3.0,
+        "SPEC-06": 1.916666666666666,
+        "SPEC-08": 4.5,
+        "SPEC-09": 0.33333333333333215,
+        "SPEC-10": 0.75,
+        "SPEC-11": 1.416666666666666,
+        "SPEC-12": 0.8333333333333339,
+        "SPEC-13": 4.666666666666666,
+        "SPEC-14": 0.8333333333333339,
+        "SPEC-15": 3.0,
+        "SPEC-16": 0.8333333333333339,
+        "SPEC-17": 2.0,
+        "SPEC-18": 1.75,
+        "SPEC-19": 2.5
+      },
+      "holm_adjusted_p_value": 0.000582127196449205
+    }
+  ],
+  "terminal_invalid_json_finish_reasons": {
+    "length": 76,
+    "stop": 9
+  }
+}

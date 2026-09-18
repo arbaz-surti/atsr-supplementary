@@ -1,0 +1,104 @@
+{
+  "extraction_date": "2026-09-17",
+  "dataset_label": "renewed-ratings-2026-09-17",
+  "status": "staged extraction; original locked ratings and analysis unchanged",
+  "source_files": {
+    "AUTHOR": {
+      "source_folder": "rating-packet-author 2.xlsm",
+      "file_name": "Ratings.html",
+      "sha256": "7679258e3ff82fdcc4e02754ca07dbabea5fe4e055095405c43dc2585447b4e0",
+      "observations": 486,
+      "scorable": 401,
+      "structural_failures": 85,
+      "rating_statuses": {
+        "Complete": 401,
+        "Not scorable": 85
+      }
+    },
+    "PRACTITIONER-01": {
+      "source_folder": "rating-packet-practitioner.xlsm",
+      "file_name": "Ratings.html",
+      "sha256": "a87105bfe84c1c4ff6013eb58b8d17ddf2aac1458c4eef366a10dd56d6aae10b",
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30,
+      "rating_statuses": {
+        "Complete": 132,
+        "Not scorable": 30
+      }
+    },
+    "PRACTITIONER-02": {
+      "source_folder": "rating-packet-practitioner-02-.xlsm",
+      "file_name": "Ratings.html",
+      "sha256": "899ff1ecfa3ab1822435e6a8e3d6954138abbc3b0302ebc42e9be3df1e9f4ce3",
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30,
+      "rating_statuses": {
+        "Complete": 132,
+        "Not scorable": 30
+      }
+    }
+  },
+  "combined_checks": {
+    "records": 810,
+    "scorable_rating_records": 665,
+    "structural_failure_assignments": 145,
+    "unique_rater_blind_item_keys": 810,
+    "score_range": [
+      1,
+      5
+    ],
+    "all_scorable_totals_reconciled": true,
+    "all_structural_failure_scores_blank": true
+  },
+  "visible_html_limit": "Ratings.html exposes columns A-K and M; hidden rationale column L is not present and was not extracted.",
+  "baseline_comparison": {
+    "baseline_file": "research/revision_analysis/ATSR-SREP-R2-v1.0/ratings-long.jsonl",
+    "same_rater_blind_id_set": true,
+    "same_specification_assignments": true,
+    "by_rater": {
+      "AUTHOR": {
+        "scorable_rows": 401,
+        "score_rows_changed": 400,
+        "score_rows_unchanged": 1,
+        "total_score_matches": 37,
+        "dimension_score_changes": {
+          "completeness": 264,
+          "specificity": 272,
+          "risk_calibration": 312,
+          "integration_awareness": 288,
+          "clarification_flag_quality": 300
+        }
+      },
+      "PRACTITIONER-01": {
+        "scorable_rows": 132,
+        "score_rows_changed": 132,
+        "score_rows_unchanged": 0,
+        "total_score_matches": 6,
+        "dimension_score_changes": {
+          "completeness": 86,
+          "specificity": 91,
+          "risk_calibration": 111,
+          "integration_awareness": 96,
+          "clarification_flag_quality": 103
+        }
+      },
+      "PRACTITIONER-02": {
+        "scorable_rows": 132,
+        "score_rows_changed": 131,
+        "score_rows_unchanged": 1,
+        "total_score_matches": 20,
+        "dimension_score_changes": {
+          "completeness": 79,
+          "specificity": 83,
+          "risk_calibration": 108,
+          "integration_awareness": 92,
+          "clarification_flag_quality": 100
+        }
+      }
+    }
+  },
+  "ratings_file": "ratings-extracted.csv",
+  "ratings_sha256": "7f69c9ef8b8b3d8ce23d77e7c0baf0aa97706f649bb86ded5b880d4662c1a8ab"
+}

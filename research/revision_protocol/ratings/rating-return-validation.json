@@ -1,0 +1,53 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "validated_on": "2026-09-14",
+  "all_passed": true,
+  "analysis_state": "Not unblinded; score import and statistical analysis pending",
+  "administrative_status": "Author confirmed on 2026-09-14 that qualification, ethics-arrangement, and consent records were in place before distribution; underlying private records are not independently verified in this repository",
+  "administrative_confirmation": "research/revision_protocol/ratings/administrative-chronology-confirmation.md",
+  "packets": [
+    {
+      "rater_id": "AUTHOR",
+      "path": "outputs/b3-rating-packets/completed/rating-packet-author-completed.xlsx",
+      "sha256": "cafc66709a9f1ad18df779876f14993c1975031a9a48ac16efac02ca849124ec",
+      "observations": 486,
+      "scorable_rows": 401,
+      "structural_failures": 85,
+      "completed_scorable_rows": 401,
+      "validation": "PASS"
+    },
+    {
+      "rater_id": "PRACTITIONER-01",
+      "path": "outputs/b3-rating-packets/completed/rating-packet-practitioner-01-completed.xlsx",
+      "sha256": "fbbc79e39c47c8999a2e756065603b4d7666103bcff235020f418adddbb2bfd2",
+      "observations": 162,
+      "scorable_rows": 132,
+      "structural_failures": 30,
+      "completed_scorable_rows": 132,
+      "validation": "PASS"
+    },
+    {
+      "rater_id": "PRACTITIONER-02",
+      "path": "outputs/b3-rating-packets/completed/rating-packet-practitioner-02-completed.xlsx",
+      "sha256": "fab778e4a4f95f1a70860f8b043bfb264ceec25eb2a139f84a8aa60f5dae3dd2",
+      "observations": 162,
+      "scorable_rows": 132,
+      "structural_failures": 30,
+      "completed_scorable_rows": 132,
+      "validation": "PASS"
+    }
+  ],
+  "checks": [
+    "received and archived bytes have matching SHA-256 values",
+    "expected sheet names and coded rater IDs preserved",
+    "blind-item IDs, order, specification text, recommendation text, and observation statuses preserved",
+    "consensus reference and final rubric preserved",
+    "total and rating-status formulas preserved",
+    "all scorable rows contain five integer scores from 1 to 5",
+    "all formula-required rationales present",
+    "all totals and completion statuses correct",
+    "structural-failure rows remain unscored and without rationales",
+    "zero spreadsheet formula-error matches",
+    "valid XLSX ZIP archives"
+  ]
+}

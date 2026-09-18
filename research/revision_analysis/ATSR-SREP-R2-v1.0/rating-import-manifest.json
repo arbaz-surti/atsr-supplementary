@@ -1,0 +1,39 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "created_on": "2026-09-14",
+  "records": 810,
+  "scorable_rating_records": 665,
+  "structural_failure_assignments": 145,
+  "unique_work_ids": 486,
+  "source_hashes": {
+    "private_rating_map": "bb231db1935af724be78ad152d4b9a72084aa5479d1f0e9a7dffdb3a42c3ca9d",
+    "valid_outputs": "e2c0d87f46540ae934db3e91843a4b5b5e958db165309983383ed39b2304efab",
+    "terminal_attempts": "de0eeef160320d2182173a9b890d19fe4e86fbf7fd6de4ffbbc5ca6476bb8832",
+    "consensus_workbook": "6362cb097a3bb8fe2dff7cae672a14918765b80294fc81c0ffd49e266a7c2d04",
+    "completed_packets": {
+      "AUTHOR": "cafc66709a9f1ad18df779876f14993c1975031a9a48ac16efac02ca849124ec",
+      "PRACTITIONER-01": "fbbc79e39c47c8999a2e756065603b4d7666103bcff235020f418adddbb2bfd2",
+      "PRACTITIONER-02": "fab778e4a4f95f1a70860f8b043bfb264ceec25eb2a139f84a8aa60f5dae3dd2"
+    }
+  },
+  "import_checks": {
+    "AUTHOR": {
+      "observations": 486,
+      "scorable": 401,
+      "structural_failures": 85
+    },
+    "PRACTITIONER-01": {
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30
+    },
+    "PRACTITIONER-02": {
+      "observations": 162,
+      "scorable": 132,
+      "structural_failures": 30
+    }
+  },
+  "invalid_treatment": "Retained with null scores; no imputation or selective replacement",
+  "ratings_file": "ratings-long.jsonl",
+  "ratings_sha256": "85eb851bb61dcafeb85be453b10e8174f4811202dfbd22d9f6f7b8384d26ed6a"
+}

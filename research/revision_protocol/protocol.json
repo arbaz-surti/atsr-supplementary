@@ -1,0 +1,82 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "frozen_date": "2026-09-13",
+  "dataset": {
+    "path": "supplementary/data/specifications.json",
+    "sha256": "48d94cce163cf21efa712939bd4334b0a89260434aafe0d83a00cbd2dd3856f0",
+    "specification_count": 18,
+    "expansion": false
+  },
+  "conditions": [
+    "naive",
+    "generic_structured_qa",
+    "atsr"
+  ],
+  "models": [
+    {
+      "family": "OpenAI",
+      "openrouter_model_id": "openai/gpt-4o-2024-11-20",
+      "provider_order": ["OpenAI"],
+      "provider_fallbacks": false,
+      "provider_observed_2026_09_13": "OpenAI"
+    },
+    {
+      "family": "Anthropic",
+      "openrouter_model_id": "anthropic/claude-sonnet-4.6",
+      "provider_order": ["Anthropic"],
+      "provider_fallbacks": false,
+      "provider_observed_2026_09_13": "Anthropic: anthropic/claude-4.6-sonnet-20260217"
+    },
+    {
+      "family": "Meta",
+      "openrouter_model_id": "meta-llama/llama-3.3-70b-instruct",
+      "provider_order": ["DeepInfra"],
+      "provider_fallbacks": false,
+      "provider_observed_2026_09_13": "DeepInfra turbo, FP8"
+    }
+  ],
+  "generation": {
+    "runs_per_model_condition_specification": 3,
+    "expected_outputs": 486,
+    "temperature": 0.2,
+    "max_tokens": 2000,
+    "top_p": null,
+    "seed": null,
+    "response_format": {"type": "json_object"},
+    "tools_enabled": false,
+    "web_access": false,
+    "queue_randomization_seed": 20260913,
+    "anchor_selection_seed": 20260913
+  },
+  "retry_policy": {
+    "transport_or_rate_limit_attempts": 3,
+    "invalid_json_repair_attempts": 1,
+    "retain_every_attempt": true,
+    "persistent_failure_treatment": "retain as missing/invalid; do not replace selectively"
+  },
+  "rating": {
+    "rubric_dimensions": [
+      "completeness",
+      "specificity",
+      "risk_calibration",
+      "integration_awareness",
+      "clarification_flag_quality"
+    ],
+    "scale": "1-5 ordinal",
+    "author_scores_all_outputs": true,
+    "additional_independent_raters": 2,
+    "independent_rater_scope": "one preregistered anchor run for every model-condition-specification cell",
+    "independent_outputs_per_rater": 162,
+    "blind_model_and_condition": true,
+    "randomize_presentation": true,
+    "consensus_ground_truth_before_output_scoring": true
+  },
+  "primary_comparison": "ATSR versus generic_structured_qa",
+  "secondary_comparisons": [
+    "ATSR versus naive",
+    "generic_structured_qa versus naive",
+    "condition contrasts within each model",
+    "run-to-run stability within each model-condition-specification cell"
+  ]
+}
+

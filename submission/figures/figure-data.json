@@ -1,0 +1,331 @@
+{
+  "generator": "research/generate_revision_figures.py",
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "input_hashes": {
+    "analysis-results.json": "d9e7bac256afce44dec113a0e315f1d569e213cc2a58732228f85337e7cd5406",
+    "results-checks.json": "898e0aa94c6406b3574f394928575b77874613a6a3a84224962b5115639beb63"
+  },
+  "fig2_perspec_means": {
+    "sort": "atsr_minus_gsq descending",
+    "rows": [
+      {
+        "spec_id": "SPEC-04",
+        "row": 18,
+        "naive": 17.0,
+        "generic_structured_qa": 18.5,
+        "atsr": 22.0,
+        "atsr_minus_gsq": 3.5
+      },
+      {
+        "spec_id": "SPEC-12",
+        "row": 17,
+        "naive": 16.333333333333332,
+        "generic_structured_qa": 17.5,
+        "atsr": 20.75,
+        "atsr_minus_gsq": 3.25
+      },
+      {
+        "spec_id": "SPEC-01",
+        "row": 16,
+        "naive": 16.5,
+        "generic_structured_qa": 16.5,
+        "atsr": 19.5,
+        "atsr_minus_gsq": 3.0
+      },
+      {
+        "spec_id": "SPEC-09",
+        "row": 15,
+        "naive": 17.166666666666668,
+        "generic_structured_qa": 18.0,
+        "atsr": 20.5,
+        "atsr_minus_gsq": 2.5
+      },
+      {
+        "spec_id": "SPEC-10",
+        "row": 14,
+        "naive": 16.0,
+        "generic_structured_qa": 17.5,
+        "atsr": 19.833333333333332,
+        "atsr_minus_gsq": 2.333333333333332
+      },
+      {
+        "spec_id": "SPEC-03",
+        "row": 13,
+        "naive": 15.5,
+        "generic_structured_qa": 16.75,
+        "atsr": 19.0,
+        "atsr_minus_gsq": 2.25
+      },
+      {
+        "spec_id": "SPEC-13",
+        "row": 12,
+        "naive": 13.333333333333334,
+        "generic_structured_qa": 19.333333333333332,
+        "atsr": 21.333333333333332,
+        "atsr_minus_gsq": 2.0
+      },
+      {
+        "spec_id": "SPEC-17",
+        "row": 11,
+        "naive": 16.666666666666668,
+        "generic_structured_qa": 17.5,
+        "atsr": 19.333333333333332,
+        "atsr_minus_gsq": 1.8333333333333321
+      },
+      {
+        "spec_id": "SPEC-06",
+        "row": 10,
+        "naive": 16.0,
+        "generic_structured_qa": 18.25,
+        "atsr": 19.75,
+        "atsr_minus_gsq": 1.5
+      },
+      {
+        "spec_id": "SPEC-02",
+        "row": 9,
+        "naive": 14.833333333333334,
+        "generic_structured_qa": 17.75,
+        "atsr": 19.166666666666668,
+        "atsr_minus_gsq": 1.4166666666666679
+      },
+      {
+        "spec_id": "SPEC-19",
+        "row": 8,
+        "naive": 13.25,
+        "generic_structured_qa": 17.5,
+        "atsr": 18.75,
+        "atsr_minus_gsq": 1.25
+      },
+      {
+        "spec_id": "SPEC-14",
+        "row": 7,
+        "naive": 17.166666666666668,
+        "generic_structured_qa": 18.75,
+        "atsr": 20.0,
+        "atsr_minus_gsq": 1.25
+      },
+      {
+        "spec_id": "SPEC-18",
+        "row": 6,
+        "naive": 17.75,
+        "generic_structured_qa": 19.25,
+        "atsr": 20.0,
+        "atsr_minus_gsq": 0.75
+      },
+      {
+        "spec_id": "SPEC-11",
+        "row": 5,
+        "naive": 15.833333333333334,
+        "generic_structured_qa": 17.75,
+        "atsr": 18.5,
+        "atsr_minus_gsq": 0.75
+      },
+      {
+        "spec_id": "SPEC-05",
+        "row": 4,
+        "naive": 15.166666666666666,
+        "generic_structured_qa": 18.75,
+        "atsr": 19.5,
+        "atsr_minus_gsq": 0.75
+      },
+      {
+        "spec_id": "SPEC-16",
+        "row": 3,
+        "naive": 17.333333333333332,
+        "generic_structured_qa": 18.0,
+        "atsr": 18.5,
+        "atsr_minus_gsq": 0.5
+      },
+      {
+        "spec_id": "SPEC-15",
+        "row": 2,
+        "naive": 14.5,
+        "generic_structured_qa": 19.166666666666668,
+        "atsr": 19.666666666666668,
+        "atsr_minus_gsq": 0.5
+      },
+      {
+        "spec_id": "SPEC-08",
+        "row": 1,
+        "naive": 16.5,
+        "generic_structured_qa": 21.0,
+        "atsr": 18.5,
+        "atsr_minus_gsq": -2.5
+      }
+    ]
+  },
+  "fig3_atsr_gsq_forest": {
+    "rows": [
+      {
+        "label": "Primary: all available models",
+        "group": "Primary",
+        "n": 18,
+        "mean": 1.4907407407407407,
+        "ci": [
+          0.8379629629629629,
+          2.0694444444444446
+        ],
+        "p": 0.0019704913490193447,
+        "ptn": {
+          "positive": 17,
+          "ties": 0,
+          "negative": 1
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "(i) Models valid under both conditions",
+        "group": "Missing-data sensitivity",
+        "n": 18,
+        "mean": 1.4444444444444444,
+        "ci": [
+          0.8055555555555556,
+          2.013888888888889
+        ],
+        "p": 0.001958310528794264,
+        "ptn": {
+          "positive": 17,
+          "ties": 0,
+          "negative": 1
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "(ii) GPT-4o and Llama 3.3 70B only",
+        "group": "Missing-data sensitivity",
+        "n": 18,
+        "mean": 1.3333333333333333,
+        "ci": [
+          0.6805555555555556,
+          1.9166666666666667
+        ],
+        "p": 0.002628126186702976,
+        "ptn": {
+          "positive": 16,
+          "ties": 0,
+          "negative": 2
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "(iii) All three models valid in both",
+        "group": "Missing-data sensitivity",
+        "n": 3,
+        "mean": 1.6666666666666667,
+        "ci": [
+          0.5,
+          2.5
+        ],
+        "p": 0.25,
+        "ptn": {
+          "positive": 3,
+          "ties": 0,
+          "negative": 0
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "Practitioner 01 only",
+        "group": "By rater",
+        "n": 18,
+        "mean": 1.6666666666666663,
+        "ci": [
+          1.0092592592592586,
+          2.25
+        ],
+        "p": 0.0013535766507431822,
+        "ptn": {
+          "positive": 16,
+          "ties": 0,
+          "negative": 2
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "Practitioner 02 only",
+        "group": "By rater",
+        "n": 18,
+        "mean": 1.3148148148148147,
+        "ci": [
+          0.48148148148148134,
+          2.046296296296296
+        ],
+        "p": 0.013132608026923943,
+        "ptn": {
+          "positive": 13,
+          "ties": 3,
+          "negative": 2
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "GPT-4o",
+        "group": "By model family",
+        "n": 18,
+        "mean": 0.8611111111111112,
+        "ci": [
+          0.1388888888888889,
+          1.6111111111111112
+        ],
+        "p": 0.06307524009455835,
+        "ptn": {
+          "positive": 12,
+          "ties": 3,
+          "negative": 3
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "Claude Sonnet 4.6",
+        "group": "By model family",
+        "n": 3,
+        "mean": 3.0,
+        "ci": [
+          2.5,
+          4.0
+        ],
+        "p": 0.25,
+        "ptn": {
+          "positive": 3,
+          "ties": 0,
+          "negative": 0
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "Llama 3.3 70B",
+        "group": "By model family",
+        "n": 18,
+        "mean": 1.8055555555555556,
+        "ci": [
+          0.8333333333333334,
+          2.7777777777777777
+        ],
+        "p": 0.004362502290300163,
+        "ptn": {
+          "positive": 15,
+          "ties": 1,
+          "negative": 2
+        },
+        "marker": "filled"
+      },
+      {
+        "label": "Author ratings (sensitivity)",
+        "group": "Author",
+        "n": 18,
+        "mean": 1.6759259259259258,
+        "ci": [
+          0.9537037037037036,
+          2.4446759259259063
+        ],
+        "p": 0.0013709129758279629,
+        "ptn": {
+          "positive": 15,
+          "ties": 1,
+          "negative": 2
+        },
+        "marker": "open"
+      }
+    ]
+  }
+}

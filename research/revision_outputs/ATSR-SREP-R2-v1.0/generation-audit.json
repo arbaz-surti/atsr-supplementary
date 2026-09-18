@@ -1,0 +1,74 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "audit_status": "PASS",
+  "errors": [],
+  "queue_items": 486,
+  "attempt_records": 584,
+  "terminal_records": 486,
+  "parsed_outputs": 401,
+  "terminal_statuses": {
+    "invalid_json": 85,
+    "valid": 401
+  },
+  "attempt_statuses": {
+    "client_interrupted": 1,
+    "http_error": 2,
+    "invalid_json": 180,
+    "valid": 401
+  },
+  "attempt_phases": {
+    "initial": 490,
+    "invalid_json_repair": 94
+  },
+  "terminal_by_condition": {
+    "atsr": {
+      "invalid_json": 36,
+      "valid": 126
+    },
+    "generic_structured_qa": {
+      "invalid_json": 37,
+      "valid": 125
+    },
+    "naive": {
+      "invalid_json": 12,
+      "valid": 150
+    }
+  },
+  "terminal_by_model": {
+    "anthropic/claude-sonnet-4.6": {
+      "invalid_json": 85,
+      "valid": 77
+    },
+    "meta-llama/llama-3.3-70b-instruct": {
+      "valid": 162
+    },
+    "openai/gpt-4o-2024-11-20": {
+      "valid": 162
+    }
+  },
+  "returned_models": {
+    "anthropic/claude-sonnet-4.6": [
+      "anthropic/claude-sonnet-4.6"
+    ],
+    "meta-llama/llama-3.3-70b-instruct": [
+      "meta-llama/llama-3.3-70b-instruct"
+    ],
+    "openai/gpt-4o-2024-11-20": [
+      "openai/gpt-4o-2024-11-20"
+    ]
+  },
+  "provider_mismatches": 0,
+  "usage": {
+    "prompt_tokens": 339776,
+    "completion_tokens": 674990,
+    "total_tokens": 1014766
+  },
+  "reported_cost_usd": 9.162396,
+  "first_attempt_at": "2026-09-14T00:25:37.864345Z",
+  "last_attempt_recorded_at": "2026-09-14T01:15:03.187235Z",
+  "artifact_sha256": {
+    "queue-manifest.json": "56282baa957d59b33eda8da6a9e9d1843afaa202472d8132c02ae078a44c8db8",
+    "attempts.jsonl": "de0eeef160320d2182173a9b890d19fe4e86fbf7fd6de4ffbbc5ca6476bb8832",
+    "outputs.jsonl": "e2c0d87f46540ae934db3e91843a4b5b5e958db165309983383ed39b2304efab"
+  }
+}

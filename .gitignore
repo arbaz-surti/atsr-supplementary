@@ -1,0 +1,14 @@
+# Local credentials must never be committed.
+.env
+
+# Python runtime artifacts and local environments.
+__pycache__/
+*.py[cod]
+.venv/
+
+# macOS metadata.
+.DS_Store
+
+# Private participant records (README placeholder is kept).
+research/revision_protocol/ground-truth/private-records/*
+!research/revision_protocol/ground-truth/private-records/README.md
