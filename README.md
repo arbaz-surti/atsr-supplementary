@@ -6,15 +6,18 @@ Supplementary materials, code, data, and analysis outputs for:
 > Arbaz Surti (independent researcher). Manuscript under revision at *Scientific Reports*
 > (Springer Nature), 2026.
 
-**Archive version:** 2.0.0 (2026-09-18) — expanded evaluation under the frozen protocol
-`ATSR-SREP-R2-v1.0`. Version 1.0.0 (March 2026) covered the original single-model,
-single-run evaluation; its files are retained unchanged under `original-evaluation/`
-(see `CHANGELOG.md`).
+**Archive version:** 2.1.0 (2026-10-22) — expanded evaluation under the frozen protocol
+`ATSR-SREP-R2-v1.0`, plus two post-hoc analyses added during the October 2026 review
+round (Section 2.4). Version 2.0.0 (2026-09-18) held the same study files without
+them. Version 1.0.0 (March 2026) covered the original single-model, single-run
+evaluation; its files are retained unchanged under `original-evaluation/` (see
+`CHANGELOG.md`).
 
-**Persistent identifier:** Zenodo DOI `10.5281/zenodo.22839182` for version 2.0.0
-(https://doi.org/10.5281/zenodo.22839182); concept DOI `10.5281/zenodo.22839181` resolves to the
-latest version. The GitHub repository (`https://github.com/arbaz-surti/atsr-supplementary`)
-is the development copy; the Zenodo record is the citable, versioned snapshot.
+**Persistent identifier:** concept DOI `10.5281/zenodo.22839181`
+(https://doi.org/10.5281/zenodo.22839181) resolves to the latest version; version 2.0.0
+is `10.5281/zenodo.22839182`. The version DOI for 2.1.0 is recorded here after Zenodo
+mints it. The GitHub repository (`https://github.com/arbaz-surti/atsr-supplementary`) is
+the development copy; the Zenodo record is the citable, versioned snapshot.
 
 ---
 
@@ -50,6 +53,8 @@ runs unmodified from the archive root:
 | `research/revision_analysis/ATSR-SREP-R2-v1.0-renewed-ratings-2026-09-17/` | `ratings-extracted.csv`: the operative rating returns (810 assignments), extracted from the raters' HTML exports; `extraction-manifest.json` records the SHA-256 of each source export and the extraction checks. |
 | `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18/` | **The operative analysis** reported in the manuscript: `ratings-long.jsonl` and `ratings-unblinded.csv` (665 scorable ratings + 145 retained structural failures, unblinded), `analysis-results.json` (all statistics), `analysis-report.md`, `analysis-manifest.json` (input/output hashes and the exact command). |
 | `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18-results-checks/` | `results-checks.json`: secondary cross-checks used in the Results section (naïve contrasts, structural-failure finish reasons, post-hoc depth analyses). |
+| `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18-round3-depth-baseline/` | `depth-baseline.json` (**post hoc**, added in review): the always-HIGH majority-class depth baseline, balanced accuracy, unweighted and linear-weighted Cohen's κ, and specification-bootstrap intervals for each condition minus the baseline (manuscript Table 4). |
+| `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18-round3-structural-failures/` | `structural-failures.json` (**post hoc**, added in review): the impact of the Claude Sonnet 4.6 structural failures on the ATSR − GSQ comparison — reproduction of the primary and GPT-4o + Llama estimates, bounds for the missing Claude outputs, a tipping-point analysis, observed Claude offsets, and completion-token / finish-reason descriptives from the generation records (manuscript §5.1–5.2). |
 | `research/revision_analysis/ATSR-SREP-R2-v1.0/` | The **superseded first-pass** rating analysis (see §3). Retained as an audit trail; also required as an input by `analyze_operative_ratings.py` for blind-item metadata and one carried-over diagnostic. |
 | `research/*.py` | All executable code for the expanded evaluation (§2). |
 | `submission/figures/` | Manuscript Figures 2 and 3 as generated TikZ/pgfplots sources and rendered PDFs, plus `figure-data.json` (the exact values plotted, with source hashes). |
@@ -139,6 +144,8 @@ p = 0.00197; n = 18 paired specifications); ICC(2,1) = 0.721 (95% CI 0.630 to 0.
 
 ```bash
 python3 research/results_supplementary_checks.py     # rewrites …-results-checks/results-checks.json (identical)
+python3 research/round3_depth_baseline.py           # post hoc (v2.1.0): rewrites …-round3-depth-baseline/depth-baseline.json (identical)
+python3 research/round3_structural_failures.py      # post hoc (v2.1.0): rewrites …-round3-structural-failures/structural-failures.json (identical)
 python3 research/generate_revision_figures.py        # rewrites submission/figures/fig2-*.tex, fig3-*.tex, figure-data.json (identical)
 python3 research/generate_revision_figures.py --render   # additionally compiles the PDFs (needs `tectonic`)
 ```

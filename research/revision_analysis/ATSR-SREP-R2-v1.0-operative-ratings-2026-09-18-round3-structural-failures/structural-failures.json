@@ -1,0 +1,354 @@
+{
+  "protocol_id": "ATSR-SREP-R2-v1.0",
+  "purpose": "POST-HOC impact of Claude Sonnet 4.6 structural failures on the primary comparison (Oct 2026, R3-2)",
+  "analysis_seed": 20260913,
+  "bootstrap_replicates": 20000,
+  "input_hashes": {
+    "ratings-long.jsonl": "0eb5ec6b83435e1d06462751e6fbf2dbc08c8a73fe59b663b9046c07c258499c",
+    "analysis-results.json": "d9e7bac256afce44dec113a0e315f1d569e213cc2a58732228f85337e7cd5406",
+    "attempts.jsonl": "de0eeef160320d2182173a9b890d19fe4e86fbf7fd6de4ffbbc5ca6476bb8832"
+  },
+  "missing_claude_anchor_specifications": {
+    "naive": [
+      "SPEC-04",
+      "SPEC-08",
+      "SPEC-18",
+      "SPEC-19"
+    ],
+    "generic_structured_qa": [
+      "SPEC-01",
+      "SPEC-02",
+      "SPEC-03",
+      "SPEC-04",
+      "SPEC-05",
+      "SPEC-06",
+      "SPEC-08",
+      "SPEC-10",
+      "SPEC-11",
+      "SPEC-14",
+      "SPEC-16",
+      "SPEC-17",
+      "SPEC-18",
+      "SPEC-19"
+    ],
+    "atsr": [
+      "SPEC-01",
+      "SPEC-03",
+      "SPEC-04",
+      "SPEC-05",
+      "SPEC-06",
+      "SPEC-08",
+      "SPEC-11",
+      "SPEC-12",
+      "SPEC-14",
+      "SPEC-16",
+      "SPEC-18",
+      "SPEC-19"
+    ]
+  },
+  "claude_observed_scores": {
+    "naive": [
+      14.0,
+      14.5,
+      15.0,
+      15.0,
+      15.5,
+      16.0,
+      16.5,
+      17.0,
+      17.5,
+      17.5,
+      17.5,
+      18.0,
+      18.5,
+      19.5
+    ],
+    "generic_structured_qa": [
+      17.0,
+      17.0,
+      18.0,
+      21.5
+    ],
+    "atsr": [
+      18.0,
+      19.0,
+      19.5,
+      22.0,
+      22.5,
+      24.0
+    ]
+  },
+  "reproduction": {
+    "primary_available_model": {
+      "paired_mean_difference": 1.4907407407407407,
+      "bootstrap_95_ci": [
+        0.8379629629629629,
+        2.0694444444444446
+      ],
+      "positive_ties_negative": [
+        17,
+        0,
+        1
+      ]
+    },
+    "complete_gpt4o_llama_only": {
+      "paired_mean_difference": 1.3333333333333333,
+      "bootstrap_95_ci": [
+        0.6805555555555556,
+        1.9305555555555556
+      ],
+      "positive_ties_negative": [
+        16,
+        0,
+        2
+      ]
+    },
+    "claude_net_leverage_on_primary": 0.15740740740740744,
+    "locked_primary_ci": [
+      0.8379629629629629,
+      2.0694444444444446
+    ],
+    "locked_complete_ci": [
+      0.6805555555555556,
+      1.9166666666666667
+    ]
+  },
+  "bounds_atsr_minus_gsq": {
+    "rubric_extremes": {
+      "least_favourable_to_atsr": {
+        "paired_mean_difference": -3.527777777777778,
+        "bootstrap_95_ci": [
+          -4.953703703703704,
+          -2.018518518518518
+        ],
+        "positive_ties_negative": [
+          3,
+          0,
+          15
+        ],
+        "imputed_missing_atsr": 5.0,
+        "imputed_missing_gsq": 25.0
+      },
+      "most_favourable_to_atsr": {
+        "paired_mean_difference": 6.101851851851852,
+        "bootstrap_95_ci": [
+          4.972222222222222,
+          7.101851851851851
+        ],
+        "positive_ties_negative": [
+          18,
+          0,
+          0
+        ],
+        "imputed_missing_atsr": 25.0,
+        "imputed_missing_gsq": 5.0
+      }
+    },
+    "observed_range_all_anchor_outputs": {
+      "least_favourable_to_atsr": {
+        "paired_mean_difference": -1.8425925925925928,
+        "bootstrap_95_ci": [
+          -2.833333333333334,
+          -0.8148148148148149
+        ],
+        "positive_ties_negative": [
+          4,
+          1,
+          13
+        ],
+        "imputed_missing_atsr": 12.0,
+        "imputed_missing_gsq": 24.5
+      },
+      "most_favourable_to_atsr": {
+        "paired_mean_difference": 4.1759259259259265,
+        "bootstrap_95_ci": [
+          3.453703703703704,
+          4.842592592592592
+        ],
+        "positive_ties_negative": [
+          18,
+          0,
+          0
+        ],
+        "imputed_missing_atsr": 24.5,
+        "imputed_missing_gsq": 12.0
+      }
+    },
+    "observed_range_claude_same_condition": {
+      "least_favourable_to_atsr": {
+        "paired_mean_difference": 0.26851851851851827,
+        "bootstrap_95_ci": [
+          -0.3240740740740748,
+          0.8425925925925924
+        ],
+        "positive_ties_negative": [
+          10,
+          0,
+          8
+        ],
+        "imputed_missing_atsr": 18.0,
+        "imputed_missing_gsq": 21.5
+      },
+      "most_favourable_to_atsr": {
+        "paired_mean_difference": 2.768518518518518,
+        "bootstrap_95_ci": [
+          2.2407407407407405,
+          3.27800925925924
+        ],
+        "positive_ties_negative": [
+          18,
+          0,
+          0
+        ],
+        "imputed_missing_atsr": 24.0,
+        "imputed_missing_gsq": 17.0
+      }
+    }
+  },
+  "tipping_point_atsr_minus_gsq": {
+    "imputation": "missing Claude output = mean of the other models in the same specification and condition, minus delta (ATSR) / plus delta (GSQ)",
+    "atsr_only_shift": {
+      "delta_where_lower_95_limit_reaches_zero": 3.37,
+      "delta_where_point_estimate_reaches_zero": 6.71,
+      "point_estimate_slope_per_point_of_delta": -0.2222222222222222
+    },
+    "two_sided_shift": {
+      "delta_where_lower_95_limit_reaches_zero": 1.6,
+      "delta_where_point_estimate_reaches_zero": 3.1,
+      "point_estimate_slope_per_point_of_delta": -0.48148148148148145
+    }
+  },
+  "observed_claude_offset_vs_other_models": {
+    "naive": {
+      "scorable_specifications": 14,
+      "mean_offset": 1.0357142857142858,
+      "min_offset": -3.25,
+      "max_offset": 3.5
+    },
+    "generic_structured_qa": {
+      "scorable_specifications": 4,
+      "mean_offset": -0.1875,
+      "min_offset": -3.25,
+      "max_offset": 3.25
+    },
+    "atsr": {
+      "scorable_specifications": 6,
+      "mean_offset": 1.2916666666666667,
+      "min_offset": -1.75,
+      "max_offset": 4.0
+    }
+  },
+  "output_sd_by_condition": {
+    "naive": 1.7093977934718796,
+    "generic_structured_qa": 1.6290137806157128,
+    "atsr": 1.6388503378078394
+  },
+  "output_budget": {
+    "anthropic/claude-sonnet-4.6|naive": {
+      "terminal_observations": 54,
+      "valid": 42,
+      "finish_reasons": {
+        "stop": 45,
+        "length": 9
+      },
+      "median_completion_tokens_all": 1822.5,
+      "median_completion_tokens_valid": 1755.5,
+      "max_completion_tokens_valid": 1998,
+      "valid_at_or_above_90pct_of_limit": 18
+    },
+    "anthropic/claude-sonnet-4.6|generic_structured_qa": {
+      "terminal_observations": 54,
+      "valid": 17,
+      "finish_reasons": {
+        "stop": 23,
+        "length": 31
+      },
+      "median_completion_tokens_all": 2000.0,
+      "median_completion_tokens_valid": 1892.0,
+      "max_completion_tokens_valid": 1986,
+      "valid_at_or_above_90pct_of_limit": 11
+    },
+    "anthropic/claude-sonnet-4.6|atsr": {
+      "terminal_observations": 54,
+      "valid": 18,
+      "finish_reasons": {
+        "length": 37,
+        "stop": 17
+      },
+      "median_completion_tokens_all": 2000.0,
+      "median_completion_tokens_valid": 1893.5,
+      "max_completion_tokens_valid": 2000,
+      "valid_at_or_above_90pct_of_limit": 14
+    },
+    "meta-llama/llama-3.3-70b-instruct|naive": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 439.0,
+      "median_completion_tokens_valid": 439.0,
+      "max_completion_tokens_valid": 553,
+      "valid_at_or_above_90pct_of_limit": 0
+    },
+    "meta-llama/llama-3.3-70b-instruct|generic_structured_qa": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 504.0,
+      "median_completion_tokens_valid": 504.0,
+      "max_completion_tokens_valid": 680,
+      "valid_at_or_above_90pct_of_limit": 0
+    },
+    "meta-llama/llama-3.3-70b-instruct|atsr": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 550.0,
+      "median_completion_tokens_valid": 550.0,
+      "max_completion_tokens_valid": 790,
+      "valid_at_or_above_90pct_of_limit": 0
+    },
+    "openai/gpt-4o-2024-11-20|naive": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 515.5,
+      "median_completion_tokens_valid": 515.5,
+      "max_completion_tokens_valid": 663,
+      "valid_at_or_above_90pct_of_limit": 0
+    },
+    "openai/gpt-4o-2024-11-20|generic_structured_qa": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 648.5,
+      "median_completion_tokens_valid": 648.5,
+      "max_completion_tokens_valid": 890,
+      "valid_at_or_above_90pct_of_limit": 0
+    },
+    "openai/gpt-4o-2024-11-20|atsr": {
+      "terminal_observations": 54,
+      "valid": 54,
+      "finish_reasons": {
+        "stop": 54
+      },
+      "median_completion_tokens_all": 673.0,
+      "median_completion_tokens_valid": 673.0,
+      "max_completion_tokens_valid": 826,
+      "valid_at_or_above_90pct_of_limit": 0
+    }
+  },
+  "claude_failure_finish_reasons": {
+    "length": 76,
+    "stop": 9
+  }
+}

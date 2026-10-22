@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this archive, please cite both the archive and the manuscript."
 type: dataset
 title: "ATSR Supplementary Materials and Reproducibility Archive"
-version: 2.0.0
-date-released: 2026-09-18
+version: 2.1.0
+date-released: 2026-10-22
 authors:
   - family-names: Surti
     given-names: Arbaz
@@ -11,14 +11,14 @@ authors:
     affiliation: "Independent researcher"
 repository-code: "https://github.com/arbaz-surti/atsr-supplementary"
 license: "MIT AND CC-BY-4.0"
-doi: 10.5281/zenodo.22839182
+doi: 10.5281/zenodo.22839181
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.22839182
-    description: "Version 2.0.0 (this release)"
   - type: doi
     value: 10.5281/zenodo.22839181
     description: "Concept DOI (resolves to the latest version)"
+  - type: doi
+    value: 10.5281/zenodo.22839182
+    description: "Version 2.0.0"
 keywords:
   - software testing
   - manual QA

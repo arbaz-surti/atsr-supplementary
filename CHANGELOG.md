@@ -1,5 +1,26 @@
 # Changelog
 
+## 2.1.0 — 2026-10-22
+
+Two post-hoc analyses added during the October 2026 review round at *Scientific
+Reports*. Both read the locked operative analysis (and, for the second, the generation
+records) read-only; no existing file changed, no output was regenerated, and no rating
+changed. Neither analysis was pre-specified in `ATSR-SREP-R2-v1.0`.
+
+Added
+- `research/round3_depth_baseline.py` and
+  `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18-round3-depth-baseline/depth-baseline.json`:
+  always-HIGH majority-class depth baseline, balanced accuracy, Cohen's κ (unweighted
+  and linear-weighted), and specification-bootstrap intervals.
+- `research/round3_structural_failures.py` and
+  `research/revision_analysis/ATSR-SREP-R2-v1.0-operative-ratings-2026-09-18-round3-structural-failures/structural-failures.json`:
+  impact of the Claude Sonnet 4.6 structural failures on the primary ATSR − GSQ
+  comparison (bounds, tipping point, completion-token descriptives).
+
+Changed
+- README (version, file table, Section 2.4 commands), `CITATION.cff`, `.zenodo.json`,
+  `LICENSE-DATA` attribution, `MANIFEST-SHA256.txt`.
+
 ## Unreleased (post-2.0.0 metadata only)
 
 - Recorded the Zenodo DOI minted for release v2.0.0 (`10.5281/zenodo.22839182`;
