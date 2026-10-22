@@ -11,8 +11,11 @@ authors:
     affiliation: "Independent researcher"
 repository-code: "https://github.com/arbaz-surti/atsr-supplementary"
 license: "MIT AND CC-BY-4.0"
-doi: 10.5281/zenodo.22839181
+doi: 10.5281/zenodo.23575315
 identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23575315
+    description: "Version 2.1.0 (this release)"
   - type: doi
     value: 10.5281/zenodo.22839181
     description: "Concept DOI (resolves to the latest version)"

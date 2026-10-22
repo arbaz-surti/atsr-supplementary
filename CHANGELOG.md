@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased (post-2.1.0 metadata only)
+
+- Recorded the Zenodo DOI minted for release v2.1.0 (`10.5281/zenodo.23575315`) in
+  `CITATION.cff`, `LICENSE-DATA`, and `README.md`; regenerated `MANIFEST-SHA256.txt`.
+  No study files changed.
+
 ## 2.1.0 — 2026-10-22
 
 Two post-hoc analyses added during the October 2026 review round at *Scientific

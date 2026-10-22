@@ -14,9 +14,9 @@ evaluation; its files are retained unchanged under `original-evaluation/` (see
 `CHANGELOG.md`).
 
 **Persistent identifier:** concept DOI `10.5281/zenodo.22839181`
-(https://doi.org/10.5281/zenodo.22839181) resolves to the latest version; version 2.0.0
-is `10.5281/zenodo.22839182`. The version DOI for 2.1.0 is recorded here after Zenodo
-mints it. The GitHub repository (`https://github.com/arbaz-surti/atsr-supplementary`) is
+(https://doi.org/10.5281/zenodo.22839181) resolves to the latest version. Version 2.1.0
+is `10.5281/zenodo.23575315` (https://doi.org/10.5281/zenodo.23575315); version 2.0.0 is
+`10.5281/zenodo.22839182`. The GitHub repository (`https://github.com/arbaz-surti/atsr-supplementary`) is
 the development copy; the Zenodo record is the citable, versioned snapshot.
 
 ---
